@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="UserFavorite" representedClassName=".Favorite" syncable="YES" codeGenerationType="category">
-        <attribute name="titre" optional="YES" attributeType="String"/>
+    <entity name="UserFavorite" representedClassName=".UserFavorite" syncable="YES" codeGenerationType="category">
+        <attribute name="recipeDescription" optional="YES" attributeType="String"/>
+        <attribute name="recipeTitle" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="UserFavorite" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="UserFavorite" positionX="-63" positionY="-18" width="128" height="59"/>
     </elements>
 </model>

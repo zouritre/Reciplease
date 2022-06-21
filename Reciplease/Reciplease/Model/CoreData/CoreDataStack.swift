@@ -19,7 +19,7 @@ final class CoreDataStack {
         appDelegate = AppDelegate()
         
         persistentContainer = appDelegate.persistentContainer
-    
+        
     }
     
     // MARK: - Private
@@ -30,16 +30,27 @@ final class CoreDataStack {
 
     // MARK: - Public
 
+    ///Get the context of persistentContainer
     var viewContext: NSManagedObjectContext {
       
       return persistentContainer.viewContext
 
     }
     
+    /// Save the context to the data model
     func saveContext() {
         
         appDelegate.saveContext()
     
+    }
+    
+    /// Create a request to be sent to the persistentContainer for fetching
+    /// - Parameter entity: The entity to get data from
+    /// - Returns: A NSFetchRequest of the specified entity
+    func request<T>(entity: T) -> NSFetchRequest<NSFetchRequestResult> where T:NSManagedObject {
+        
+        return T.fetchRequest()
+        
     }
 
 }
