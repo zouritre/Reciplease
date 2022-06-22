@@ -7,14 +7,19 @@
 
 import UIKit
 import CoreData
+import SharkORM
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, SRKDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        SharkORM.setDelegate(self)
+        SharkORM.openDatabaseNamed("Reciplease")
+        
         return true
     }
 
