@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E1F1002C94D42BF2ADA3BDC /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F648E2B8F475E01335CA5E /* Pods_Reciplease.framework */; };
+		2A817DF6AA6987EADB365173 /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E83C74E4A88AA3A66EA4CB37 /* Pods_Reciplease.framework */; };
 		E93DF51528629AEC007C4D4E /* UserFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93DF51428629AEC007C4D4E /* UserFavorite.swift */; };
+		E9C4AFB928638A0A00A2C744 /* IngredientRelatedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C4AFB828638A0A00A2C744 /* IngredientRelatedLabel.swift */; };
 		E9E3A50028612C5200E59144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E3A4FF28612C5200E59144 /* AppDelegate.swift */; };
 		E9E3A50228612C5200E59144 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E3A50128612C5200E59144 /* SceneDelegate.swift */; };
 		E9E3A50428612C5200E59144 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E3A50328612C5200E59144 /* ViewController.swift */; };
@@ -16,13 +17,15 @@
 		E9E3A50A28612C5200E59144 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9E3A50828612C5200E59144 /* Reciplease.xcdatamodeld */; };
 		E9E3A50C28612C5300E59144 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E3A50B28612C5300E59144 /* Assets.xcassets */; };
 		E9E3A50F28612C5300E59144 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9E3A50D28612C5300E59144 /* LaunchScreen.storyboard */; };
+		E9FD9CBE2863690F00FA6ADA /* UiViewExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FD9CBD2863690F00FA6ADA /* UiViewExtended.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		66F648E2B8F475E01335CA5E /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3DE207256406077685B13ED /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
-		D077A1476026482D70899C28 /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
+		A1FBB473F56523DA4CA8039E /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
+		E83C74E4A88AA3A66EA4CB37 /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93DF51428629AEC007C4D4E /* UserFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavorite.swift; sourceTree = "<group>"; };
+		E98708D2274555E894D2BDFC /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
+		E9C4AFB828638A0A00A2C744 /* IngredientRelatedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientRelatedLabel.swift; sourceTree = "<group>"; };
 		E9E3A4FC28612C5200E59144 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E3A4FF28612C5200E59144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9E3A50128612C5200E59144 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		E9E3A50B28612C5300E59144 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9E3A50E28612C5300E59144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9E3A51028612C5300E59144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9FD9CBD2863690F00FA6ADA /* UiViewExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExtended.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E1F1002C94D42BF2ADA3BDC /* Pods_Reciplease.framework in Frameworks */,
+				2A817DF6AA6987EADB365173 /* Pods_Reciplease.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,16 +53,16 @@
 		B1138AEA75096870D8F24E34 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A3DE207256406077685B13ED /* Pods-Reciplease.debug.xcconfig */,
-				D077A1476026482D70899C28 /* Pods-Reciplease.release.xcconfig */,
+				A1FBB473F56523DA4CA8039E /* Pods-Reciplease.debug.xcconfig */,
+				E98708D2274555E894D2BDFC /* Pods-Reciplease.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		D5ED53B8C93FE3962094730E /* Frameworks */ = {
+		C6DB93953BA8B3058563E04B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				66F648E2B8F475E01335CA5E /* Pods_Reciplease.framework */,
+				E83C74E4A88AA3A66EA4CB37 /* Pods_Reciplease.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -69,7 +73,7 @@
 				E9E3A4FE28612C5200E59144 /* Reciplease */,
 				E9E3A4FD28612C5200E59144 /* Products */,
 				B1138AEA75096870D8F24E34 /* Pods */,
-				D5ED53B8C93FE3962094730E /* Frameworks */,
+				C6DB93953BA8B3058563E04B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				E9E3A50528612C5200E59144 /* Main.storyboard */,
+				E9FD9CBD2863690F00FA6ADA /* UiViewExtended.swift */,
+				E9C4AFB828638A0A00A2C744 /* IngredientRelatedLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -136,11 +142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9E3A51328612C5300E59144 /* Build configuration list for PBXNativeTarget "Reciplease" */;
 			buildPhases = (
-				158AB3EFAFBA350145AE418A /* [CP] Check Pods Manifest.lock */,
+				EAC5743C2B9EB34604DE42B4 /* [CP] Check Pods Manifest.lock */,
 				E9E3A4F828612C5200E59144 /* Sources */,
 				E9E3A4F928612C5200E59144 /* Frameworks */,
 				E9E3A4FA28612C5200E59144 /* Resources */,
-				05CB520D982A22874E164D43 /* [CP] Embed Pods Frameworks */,
+				B6C6A4B87BECBB3802A72ECD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,7 +204,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05CB520D982A22874E164D43 /* [CP] Embed Pods Frameworks */ = {
+		B6C6A4B87BECBB3802A72ECD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -215,7 +221,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reciplease/Pods-Reciplease-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		158AB3EFAFBA350145AE418A /* [CP] Check Pods Manifest.lock */ = {
+		EAC5743C2B9EB34604DE42B4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -247,8 +253,10 @@
 				E9E3A50A28612C5200E59144 /* Reciplease.xcdatamodeld in Sources */,
 				E93DF51528629AEC007C4D4E /* UserFavorite.swift in Sources */,
 				E9E3A50428612C5200E59144 /* ViewController.swift in Sources */,
+				E9C4AFB928638A0A00A2C744 /* IngredientRelatedLabel.swift in Sources */,
 				E9E3A50028612C5200E59144 /* AppDelegate.swift in Sources */,
 				E9E3A50228612C5200E59144 /* SceneDelegate.swift in Sources */,
+				E9FD9CBE2863690F00FA6ADA /* UiViewExtended.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,7 +398,7 @@
 		};
 		E9E3A51428612C5300E59144 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3DE207256406077685B13ED /* Pods-Reciplease.debug.xcconfig */;
+			baseConfigurationReference = A1FBB473F56523DA4CA8039E /* Pods-Reciplease.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -414,6 +422,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_SUPPRESS_WARNINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -421,7 +430,7 @@
 		};
 		E9E3A51528612C5300E59144 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D077A1476026482D70899C28 /* Pods-Reciplease.release.xcconfig */;
+			baseConfigurationReference = E98708D2274555E894D2BDFC /* Pods-Reciplease.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -445,6 +454,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_SUPPRESS_WARNINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
