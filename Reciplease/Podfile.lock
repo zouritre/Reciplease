@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (5.6.1)
+  - SharkORM (2.3.62)
+
+DEPENDENCIES:
+  - Alamofire
+  - SharkORM
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - SharkORM
+
+SPEC CHECKSUMS:
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  SharkORM: ff65244dfc2e1fa4613badad7c42f6febc1951cc
+
+PODFILE CHECKSUM: 1208789f993149ea0a57dbc33b0e5e6cdb4f7b14
+
+COCOAPODS: 1.11.3
