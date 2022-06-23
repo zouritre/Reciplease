@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.6.1)
   - SharkORM (2.3.62)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - Alamofire
   - SharkORM
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - SharkORM
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   SharkORM: ff65244dfc2e1fa4613badad7c42f6febc1951cc
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 1208789f993149ea0a57dbc33b0e5e6cdb4f7b14
+PODFILE CHECKSUM: 7cbc5c35f017901a40015d344ece9cdb12723827
 
 COCOAPODS: 1.11.3
