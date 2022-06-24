@@ -55,27 +55,63 @@ class RecipeSearchService {
                 /// Array contaning all recipes and their details
                 var recipes: [[String: Any]] = [[:]]
                 
-                for recipe in json["hits"].arrayValue {
+                //Check at least one recipe has been found
+                if json["count"] > 0 {
                     
-                    // Retrieve each recipe detail separatly
-                    let title = recipe["recipe"]["label"].stringValue
-                    let imageLink = recipe["recipe"]["images"]["REGULAR"]["url"].stringValue
-                    let ingredients = recipe["recipe"]["ingredientLines"].arrayValue
-                    let cookingTime = recipe["recipe"]["totalTime"].floatValue
+                    // Remove the first empty dictionnary element from the array
+                    recipes.removeFirst()
                     
-                    // Store the details of the recipe in a row of the array
-                    recipeDetail["title"] = title
-                    recipeDetail["imageLink"] = imageLink
-                    recipeDetail["ingredients"] = ingredients
-                    recipeDetail["cookingTime"] = cookingTime
+                    for recipe in json["hits"].arrayValue {
+                        
+                        // Retrieve each recipe detail separately
+                        let title = recipe["recipe"]["label"].stringValue
+                        let imageLink = recipe["recipe"]["images"]["REGULAR"]["url"].stringValue
+                        let ingredientsMeasurements = recipe["recipe"]["ingredientLines"].arrayValue
+                        let ingredientDetails = recipe["recipe"]["ingredients"].arrayValue
+                        let cookingTime = recipe["recipe"]["totalTime"].floatValue
+                        
+                        var ingredientNames: [Any] = []
+                        
+//                        let mockJson = JSON(ingredientDetails)
+                        
+//                        for (_,ingredient) in mockJson {
+//                            print("hey")
+//                            ingredientNames.append(ingredient["food"].stringValue)
+//
+//                        }
+//
+                        ingredientDetails.forEach { ingredient in
+
+                            print("ingredient name: ", ingredient["food"].stringValue)
+
+                            ingredientNames.append(ingredient["text"].stringValue)
+
+                        }
+                        
+                        print("Count: ", ingredientNames.count)
+                        
+                        // Store the details of the recipe in a row of the array
+                        recipeDetail["title"] = title
+                        recipeDetail["imageLink"] = imageLink
+                        recipeDetail["ingredientsMeasurements"] = ingredientsMeasurements
+                        recipeDetail["ingredientNames"] = ingredientNames
+                        recipeDetail["cookingTime"] = cookingTime
+                        
+                        // Store the recipe detail in the array
+                        recipes.append(recipeDetail)
                     
-                    // Store the recipe detail in the array
-                    recipes.append(recipeDetail)
-                
+                    }
+                    
+                    // Send the array of recipes to the closure
+                    completionHandler(recipes, nil)
                 }
                 
-                // Send the array of recipes to the closure
-                completionHandler(recipes, nil)
+                else {
+                    
+                    // Send an array contaning an empty dictionnary as the only element if no recipe has been found
+                    completionHandler(recipes, nil)
+                }
+                
                 
             }
         }

@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2C372C69247421DB16DA744A /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD5B63C1EF5F827C12BF7520 /* Pods_Reciplease.framework */; };
-		E93DF51528629AEC007C4D4E /* UserFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93DF51428629AEC007C4D4E /* UserFavorite.swift */; };
 		E95D6EE928649674009520A3 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D6EE828649674009520A3 /* ViewControllerExtension.swift */; };
 		E95D6EEB28649D7B009520A3 /* RecipeSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D6EEA28649D7B009520A3 /* RecipeSearchService.swift */; };
 		E95D6EED28649E64009520A3 /* EdamamApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D6EEC28649E64009520A3 /* EdamamApi.swift */; };
+		E95D6EEF2864F487009520A3 /* RecipeSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D6EEE2864F487009520A3 /* RecipeSearchResultViewController.swift */; };
+		E95D6EF128651B70009520A3 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D6EF028651B70009520A3 /* IngredientTableViewCell.swift */; };
 		E986B1432864830B00FC3153 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986B1422864830B00FC3153 /* NetworkService.swift */; };
 		E9C4AFB928638A0A00A2C744 /* IngredientRelatedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C4AFB828638A0A00A2C744 /* IngredientRelatedLabel.swift */; };
 		E9E3A50028612C5200E59144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E3A4FF28612C5200E59144 /* AppDelegate.swift */; };
@@ -28,10 +29,11 @@
 		35CC4A2D25A7C1AAD5084F06 /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
 		5B981F1275FCAA66772CD94D /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
 		AD5B63C1EF5F827C12BF7520 /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E93DF51428629AEC007C4D4E /* UserFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavorite.swift; sourceTree = "<group>"; };
 		E95D6EE828649674009520A3 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		E95D6EEA28649D7B009520A3 /* RecipeSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchService.swift; sourceTree = "<group>"; };
 		E95D6EEC28649E64009520A3 /* EdamamApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamApi.swift; sourceTree = "<group>"; };
+		E95D6EEE2864F487009520A3 /* RecipeSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchResultViewController.swift; sourceTree = "<group>"; };
+		E95D6EF028651B70009520A3 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		E986B1422864830B00FC3153 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E9C4AFB828638A0A00A2C744 /* IngredientRelatedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientRelatedLabel.swift; sourceTree = "<group>"; };
 		E9E3A4FC28612C5200E59144 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,7 @@
 				E9E3A50528612C5200E59144 /* Main.storyboard */,
 				E9FD9CBD2863690F00FA6ADA /* UiViewExtended.swift */,
 				E9C4AFB828638A0A00A2C744 /* IngredientRelatedLabel.swift */,
+				E95D6EF028651B70009520A3 /* IngredientTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				E9E3A50828612C5200E59144 /* Reciplease.xcdatamodeld */,
-				E93DF51428629AEC007C4D4E /* UserFavorite.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -143,6 +145,7 @@
 			children = (
 				E95D6EE828649674009520A3 /* ViewControllerExtension.swift */,
 				E9E3A50328612C5200E59144 /* RecipeSearchViewController.swift */,
+				E95D6EEE2864F487009520A3 /* RecipeSearchResultViewController.swift */,
 			);
 			path = Controler;
 			sourceTree = "<group>";
@@ -263,9 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9E3A50A28612C5200E59144 /* Reciplease.xcdatamodeld in Sources */,
-				E93DF51528629AEC007C4D4E /* UserFavorite.swift in Sources */,
 				E95D6EED28649E64009520A3 /* EdamamApi.swift in Sources */,
+				E95D6EEF2864F487009520A3 /* RecipeSearchResultViewController.swift in Sources */,
 				E95D6EE928649674009520A3 /* ViewControllerExtension.swift in Sources */,
+				E95D6EF128651B70009520A3 /* IngredientTableViewCell.swift in Sources */,
 				E986B1432864830B00FC3153 /* NetworkService.swift in Sources */,
 				E9E3A50428612C5200E59144 /* RecipeSearchViewController.swift in Sources */,
 				E95D6EEB28649D7B009520A3 /* RecipeSearchService.swift in Sources */,

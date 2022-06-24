@@ -8,50 +8,98 @@
 import UIKit
 import SharkORM
 
-class RecipeSearchViewController: UIViewController {
+extension RecipeSearchViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.ingredients.count
+    
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = self.ingredientTableView.dequeueReusableCell(withIdentifier: "ingredient") as? IngredientTableViewCell else {
+            
+            return UITableViewCell()
+            
+        }
+        
+        cell.ingredientLabel.text = "- \(self.ingredients[indexPath.row])"
+        
+        return cell
+        
+    }
+    
+    
+    
+}
 
+extension RecipeSearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked( _ searchBar: UISearchBar) {
+            
+        guard let splittedSearchText = searchBar.text?.split(separator: ",") else {
+            print("search bar text splitting returned empty array")
+            return
+        }
+        
+        for substring in splittedSearchText {
+            
+            // Prevent duplicate string
+            if self.ingredients.firstIndex(of: String(substring).capitalized) == nil {
+                
+                self.ingredients.append(String(substring).capitalized)
+                
+            }
+        }
+        
+        self.ingredientTableView.reloadData()
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+        // Hide keyboard when Cancel button is tapped
+        self.searchBar.resignFirstResponder()
+        
+    }
+}
+
+class RecipeSearchViewController: UIViewController {
+    
+    var ingredients: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        RecipeSearchService().getRecipes(for: ["Apple", "peanut"]) { recipes, error in
-            
-            DispatchQueue.main.async {
-                
-                if let error = error {
-                    
-                    self.alert(message: error)
-                }
-                else {
-                    
-                    guard let recipes = recipes else {
-                        
-                        self.alert(message: "No recipe found")
-                        
-                        return
-                    
-                    }
-                    
-                    recipes.forEach { recipe in
-                        
-                        guard let title = recipe["title"] else {
-                            print("found nil")
-                            return
-                        }
-                        guard let cookingTime = recipe["cookingTime"] else {
-                            print("found nil")
-                            return
-                        }
-                        
-                        print("\(title) \n\(cookingTime) ")
-                        
-                    }
-                }
-            }
-        }
+        self.searchBar.delegate = self
         
     }
 
+    @IBOutlet weak var ingredientTableView: UITableView!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBAction func clearButton(_ sender: Any) {
+        
+        self.ingredients.removeAll()
+        
+        self.ingredientTableView.reloadData()
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "searchResult" {
+            
+            if let targetVc = segue.destination as? RecipeSearchResultViewController {
+                
+                targetVc.ingredients = self.ingredients
+                
+            }
+        }
+    }
 }
 
