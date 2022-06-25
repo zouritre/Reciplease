@@ -13,4 +13,8 @@ target 'Reciplease' do
   pod 'SharkORM'
   pod 'SwiftyJSON', '~> 4.0'
 
+  target 'RecipleaseTests' do
+        inherit! :search_paths
+    end
+
 end

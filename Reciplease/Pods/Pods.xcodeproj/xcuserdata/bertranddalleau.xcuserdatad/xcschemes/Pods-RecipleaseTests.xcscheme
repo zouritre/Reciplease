@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F11267DB4D5EE1D54642DD4AF5EC033C"
-               BuildableName = "SharkORM.framework"
-               BlueprintName = "SharkORM"
+               BlueprintIdentifier = "EF9A5C5B0637BB4D6B49A9DB7F5B870B"
+               BuildableName = "Pods_RecipleaseTests.framework"
+               BlueprintName = "Pods-RecipleaseTests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

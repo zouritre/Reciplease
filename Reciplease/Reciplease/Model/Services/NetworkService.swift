@@ -8,12 +8,20 @@
 import Foundation
 import Alamofire
 
-class NetworkService {
+final class NetworkService {
     
     /// Singleton
-    static var shared = NetworkService()
+    static let shared = NetworkService()
     
-    private init() {}
+    let configuration: URLSessionConfiguration
+    
+    var sessionManager: Session
+    
+    private init() {
+        self.configuration = .af.default
+        
+        self.sessionManager = Session()
+    }
     
     /// Send an HTTPS request to specified URL
     /// - Parameters:
@@ -21,6 +29,12 @@ class NetworkService {
     ///   - method: Method used to send the request
     ///   - completionHandler: The data received in the response if any or an error
     func makeRequest(urlString: String, method: HTTPMethod, completionHandler: @escaping (_ data: Data?, _ error: AFError?) -> Void) {
+        
+        //Cancel pending requests
+        sessionManager.cancelAllRequests()
+        
+        //Create a new session
+        sessionManager = Alamofire.Session(configuration: configuration)
         
         // Encode the string to correct URL format
         let url = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -30,7 +44,7 @@ class NetworkService {
         }
         
         // Emit a request to specified URL
-        AF.request(url, method: method).validate().response { response in
+        sessionManager.request(url, method: method).validate().response { response in
             
             switch response.result {
                 
