@@ -20,7 +20,7 @@ class NetworkService {
     ///   - url: URL of the request
     ///   - method: Method used to send the request
     ///   - completionHandler: The data received in the response if any or an error
-    func makeRequest(urlString: String, method: HTTPMethod, completionHandler: @escaping (_ data: Data?, _ errorDescription: String?) -> Void) {
+    func makeRequest(urlString: String, method: HTTPMethod, completionHandler: @escaping (_ data: Data?, _ error: AFError?) -> Void) {
         
         // Encode the string to correct URL format
         let url = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -38,7 +38,7 @@ class NetworkService {
                 completionHandler(data, nil)
                 
             case .failure(let error):
-                completionHandler(nil, "\(error) -> \(error.localizedDescription)")
+                completionHandler(nil, error)
                 
             }
         }

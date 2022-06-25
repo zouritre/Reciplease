@@ -7,22 +7,53 @@
 
 import UIKit
 
+extension RecipeSearchResultViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.recipes.count
+    
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = self.recipeTableView.dequeueReusableCell(withIdentifier: "recipe") as? RecipeTableViewCell else {
+            return UITableViewCell()
+            
+        }
+        
+        cell.recipeTitle.text = self.recipes[indexPath.row].title
+        cell.recipeIngredients.text = self.recipes[indexPath.row].ingredientNames.joined(separator: ", ")
+        cell.recipeImageView.loadFrom(URLAddress: self.recipes[indexPath.row].imageLink)
+        
+        return cell
+        
+    }
+    
+    
+    
+}
+
 class RecipeSearchResultViewController: UIViewController {
 
     /// Ingredients chosen by the user
     var ingredients: [String] = []
     
     /// Recipes retrieved from API according to user selected ingredients
-    var recipes: [[String : Any]] = [[:]]
+    var recipes: [Recipe] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         getRecipes()
         
     }
     
     @IBOutlet weak var resultLoadingIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var recipeTableView: UITableView!
+    
+    @IBOutlet weak var noRecipeFoundLabel: UILabel!
     
     func getRecipes() {
         
@@ -37,14 +68,27 @@ class RecipeSearchResultViewController: UIViewController {
                 // Check if there's error in response
                 if let error = error {
                     
-                    self.alert(message: error)
+                    self.resultLoadingIndicator.isHidden = true
+                    
+                    guard error as? RecipeSearchError != RecipeSearchError.noRecipeFound else {
+                        
+                        self.noRecipeFoundLabel.text = error.localizedDescription
+                        self.noRecipeFoundLabel.isHidden = false
+                        
+                        return
+                    }
+                    
+                    self.alert(message: error.localizedDescription)
+                    
+                    return
+                    
                 }
                 else {
                     
                     // Check if there's data in response
-                    guard let recipes = recipes else {
+                    guard let recipes = recipes, error == nil else {
                         
-                        self.alert(message: "No data received from server")
+                        self.alert(message: RecipeSearchError.unexpectedDataError.localizedDescription)
                         
                         return
                     
@@ -54,21 +98,15 @@ class RecipeSearchResultViewController: UIViewController {
                     
                     self.resultLoadingIndicator.isHidden = true
                     
-                    recipes.forEach { recipe in
-
-                        guard let title = recipe["title"] else {
-                            print("found nil")
-                            return
-                        }
-
-                        guard let ingredientsMeasurements = recipe["ingredientsMeasurements"] else {
-                            print("found nil")
-                            return
-                        }
-
-                        print("\(title) \n\(ingredientsMeasurements) ")
-
-                    }
+                    self.recipeTableView.reloadData()
+                    
+//                    recipes.forEach { recipe in
+//
+//                        print(recipe.title)
+//
+//                        print(recipe.ingredientNames)
+//
+//                    }
                 }
             }
         }
