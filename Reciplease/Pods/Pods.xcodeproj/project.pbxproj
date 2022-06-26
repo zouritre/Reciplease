@@ -196,7 +196,7 @@
 		12427FCDEE6B52F55CC6BE3BB514F9AF /* SwiftyJSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.debug.xcconfig; sourceTree = "<group>"; };
 		14A7B4BDC9019C95819425C61F592342 /* SRKAES256Extension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SRKAES256Extension.m; path = SharkORM/Core/PersistableObjects/SRKAES256Extension.m; sourceTree = "<group>"; };
 		15A231B2E30E2E6E757418477982307B /* SRKSyncNodesList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SRKSyncNodesList.h; path = SharkORM/Sync/Comms/SRKSyncNodesList.h; sourceTree = "<group>"; };
-		169C324099934C87E6B23680FCB35388 /* SharkORM */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SharkORM; path = SharkORM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		169C324099934C87E6B23680FCB35388 /* SharkORM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharkORM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16DCFFAA23EB3149D819638B84CBE63C /* SRKEventRegistryObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SRKEventRegistryObject.h; path = SharkORM/Core/Events/SRKEventRegistryObject.h; sourceTree = "<group>"; };
 		184A2F918DCA28F7C966513832B0ABB0 /* Pods-Reciplease-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reciplease-dummy.m"; sourceTree = "<group>"; };
 		1A46ABB4374153AE9922BEADD5756EB8 /* SRKEventRegistryObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SRKEventRegistryObject.m; path = SharkORM/Core/Events/SRKEventRegistryObject.m; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 		592C92ECA2E0A7C9E6D14A259FB85D12 /* Pods-RecipleaseTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RecipleaseTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5BB0785C83111BA639E417B11E607AD1 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
 		5BC5F6C57A60A1F07DFB47D66D4A8D58 /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE78040247F266150CF0038CD543FA7 /* SharkSchemaManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SharkSchemaManager.h; path = SharkORM/Core/SharkSchemaManager.h; sourceTree = "<group>"; };
 		5FBBB6C0745F04B52FE83F2B6222D5E5 /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
 		606276E8CF0F516052A9B2EEC4B5BDC6 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
@@ -664,10 +664,10 @@
 		BB22B5FE625287C44C7916EC528863B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */,
 				4D2159C8223DD3978AB60E8643D8E6D7 /* Pods-Reciplease */,
 				7BABB526A71FB183B6000A43BD2CDA2D /* Pods-RecipleaseTests */,
-				169C324099934C87E6B23680FCB35388 /* SharkORM */,
+				169C324099934C87E6B23680FCB35388 /* SharkORM.framework */,
 				E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */,
 			);
 			name = Products;
@@ -841,7 +841,7 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */;
+			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EF9A5C5B0637BB4D6B49A9DB7F5B870B /* Pods-RecipleaseTests */ = {
@@ -878,7 +878,7 @@
 			);
 			name = SharkORM;
 			productName = SharkORM;
-			productReference = 169C324099934C87E6B23680FCB35388 /* SharkORM */;
+			productReference = 169C324099934C87E6B23680FCB35388 /* SharkORM.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -888,7 +888,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1340;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -1195,7 +1195,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SharkORM/SharkORM-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SharkORM/SharkORM-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1267,7 +1267,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1469,7 +1469,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1574,7 +1574,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SharkORM/SharkORM-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SharkORM/SharkORM-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

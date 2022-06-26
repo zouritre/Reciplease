@@ -15,6 +15,7 @@
 		E951AB832867283900FA9D7C /* RecipeData.json in Resources */ = {isa = PBXBuildFile; fileRef = E951AB822867283900FA9D7C /* RecipeData.json */; };
 		E951AB87286740B500FA9D7C /* RecipeSearchServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951AB86286740B500FA9D7C /* RecipeSearchServiceTest.swift */; };
 		E951AB8B2867739800FA9D7C /* RecipeDataEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = E951AB8A2867739800FA9D7C /* RecipeDataEmpty.json */; };
+		E95C99722868968300A68F4F /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C99712868968300A68F4F /* RecipeDetailViewController.swift */; };
 		E95D6EE928649674009520A3 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D6EE828649674009520A3 /* ViewControllerExtension.swift */; };
 		E95D6EEB28649D7B009520A3 /* RecipeSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D6EEA28649D7B009520A3 /* RecipeSearchService.swift */; };
 		E95D6EED28649E64009520A3 /* EdamamApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D6EEC28649E64009520A3 /* EdamamApi.swift */; };
@@ -61,6 +62,7 @@
 		E951AB822867283900FA9D7C /* RecipeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RecipeData.json; sourceTree = "<group>"; };
 		E951AB86286740B500FA9D7C /* RecipeSearchServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchServiceTest.swift; sourceTree = "<group>"; };
 		E951AB8A2867739800FA9D7C /* RecipeDataEmpty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RecipeDataEmpty.json; sourceTree = "<group>"; };
+		E95C99712868968300A68F4F /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecipeDetailViewController.swift; path = Reciplease/Controler/RecipeDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		E95D6EE828649674009520A3 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		E95D6EEA28649D7B009520A3 /* RecipeSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchService.swift; sourceTree = "<group>"; };
 		E95D6EEC28649E64009520A3 /* EdamamApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamApi.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				E95D6EE828649674009520A3 /* ViewControllerExtension.swift */,
 				E9E3A50328612C5200E59144 /* RecipeSearchViewController.swift */,
 				E95D6EEE2864F487009520A3 /* RecipeSearchResultViewController.swift */,
+				E95C99712868968300A68F4F /* RecipeDetailViewController.swift */,
 			);
 			path = Controler;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				E9C4AFB928638A0A00A2C744 /* IngredientRelatedLabel.swift in Sources */,
 				E9E3A50028612C5200E59144 /* AppDelegate.swift in Sources */,
 				E99E5751286606730057C206 /* Recipe.swift in Sources */,
+				E95C99722868968300A68F4F /* RecipeDetailViewController.swift in Sources */,
 				E9E3A50228612C5200E59144 /* SceneDelegate.swift in Sources */,
 				E9FD9CBE2863690F00FA6ADA /* UiViewExtended.swift in Sources */,
 			);

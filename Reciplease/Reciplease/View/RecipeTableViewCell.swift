@@ -11,9 +11,26 @@ import UIKit
 @IBDesignable
 class RecipeTableViewCell: UITableViewCell {
     
+    var recipe: Recipe? {
+        
+        willSet {
+            
+            guard let newValue = newValue else {
+                return
+            }
+            
+            self.recipeTitle.text = newValue.title
+            self.recipeIngredients.text = newValue.ingredientNames.joined(separator: ", ")
+            self.recipeImage.loadFrom(URLAddress: newValue.imageLink)
+            
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.recipeImage.frame = CGRect(x: 0,y: 0,width: 394,height: 138)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -22,7 +39,7 @@ class RecipeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBOutlet weak var recipeImageView: UIImageView!
+    @IBOutlet weak var recipeImage: UIImageView!
     
     @IBOutlet weak var recipeTitle: UILabel!
     

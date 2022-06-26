@@ -7,6 +7,22 @@
 
 import UIKit
 
+extension RecipeSearchResultViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let selectedCell = tableView.cellForRow(at: indexPath) as? RecipeTableViewCell else {
+            return
+        }
+        
+        guard let selectedCellRecipe = selectedCell.recipe else {
+            return
+        }
+        
+        self.selectedRecipe = selectedCellRecipe
+        
+        performSegue(withIdentifier: "searchResultDetail", sender: self)
+    }
+}
 extension RecipeSearchResultViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -22,9 +38,7 @@ extension RecipeSearchResultViewController: UITableViewDataSource {
             
         }
         
-        cell.recipeTitle.text = self.recipes[indexPath.row].title
-        cell.recipeIngredients.text = self.recipes[indexPath.row].ingredientNames.joined(separator: ", ")
-        cell.recipeImageView.loadFrom(URLAddress: self.recipes[indexPath.row].imageLink)
+        cell.recipe = self.recipes[indexPath.row]
         
         return cell
         
@@ -41,6 +55,8 @@ class RecipeSearchResultViewController: UIViewController {
     
     /// Recipes retrieved from API according to user selected ingredients
     var recipes: [Recipe] = []
+    
+    var selectedRecipe: Recipe?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,17 +115,21 @@ class RecipeSearchResultViewController: UIViewController {
                     self.resultLoadingIndicator.isHidden = true
                     
                     self.recipeTableView.reloadData()
-                    
-//                    recipes.forEach { recipe in
-//
-//                        print(recipe.title)
-//
-//                        print(recipe.ingredientNames)
-//
-//                    }
                 }
             }
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "searchResultDetail" {
+            
+            if let targetVC = segue.destination as? RecipeDetailViewController {
+                
+                targetVC.recipe = self.selectedRecipe
+                
+            }
+            
+        }
+    }
 }
