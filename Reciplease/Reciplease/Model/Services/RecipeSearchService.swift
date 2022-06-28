@@ -19,7 +19,9 @@ class RecipeSearchService {
         
         let urlString = "\(EdamamApi.recipeSearchUrl)&q=\(ingredientsAsString)&time=\(minCokkingTime)&field=label&field=ingredients&field=totalTime&field=images"
         
-        NetworkService.shared.makeRequest(urlString: urlString, method: EdamamApi.recipeSearchMethod) { data, error in
+        let networkService = NetworkService()
+        
+        networkService.makeRequest(urlString: urlString, method: EdamamApi.recipeSearchMethod) { data, error in
             
             if let error = error {
                 //Check if errors
@@ -52,14 +54,14 @@ class RecipeSearchService {
                 /// Array contaning all recipes and their details
                 var recipes: [Recipe] = []
                 
-                //Check at least one recipe has been found
+                //Check if at least one recipe has been found
                 if json["count"] > 0 {
                     
                     for recipeDetail in json["hits"].arrayValue {
                         
-                        var recipe = Recipe()
+                        let recipe = Recipe()
                         
-                        // Retrieve each recipe detail separately
+                        // Store the recipe details
                         recipe.title = recipeDetail["recipe"]["label"].stringValue
                         recipe.imageLink = recipeDetail["recipe"]["images"]["REGULAR"]["url"].stringValue
                         recipe.cookingTime = recipeDetail["recipe"]["totalTime"].floatValue

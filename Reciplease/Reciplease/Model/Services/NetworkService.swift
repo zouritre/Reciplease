@@ -10,14 +10,11 @@ import Alamofire
 
 final class NetworkService {
     
-    /// Singleton
-    static let shared = NetworkService()
-    
     let configuration: URLSessionConfiguration
     
     var sessionManager: Session
     
-    private init() {
+    init() {
         self.configuration = .af.default
         
         self.sessionManager = Session()

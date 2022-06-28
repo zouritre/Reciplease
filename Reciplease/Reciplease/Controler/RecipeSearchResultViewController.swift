@@ -8,6 +8,7 @@
 import UIKit
 
 extension RecipeSearchResultViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let selectedCell = tableView.cellForRow(at: indexPath) as? RecipeTableViewCell else {
@@ -18,10 +19,12 @@ extension RecipeSearchResultViewController: UITableViewDelegate {
             return
         }
         
+        //Retrieve the recipe of the selected cell in the table view
         self.selectedRecipe = selectedCellRecipe
         
         performSegue(withIdentifier: "searchResultDetail", sender: self)
     }
+    
 }
 extension RecipeSearchResultViewController: UITableViewDataSource {
     
@@ -38,6 +41,7 @@ extension RecipeSearchResultViewController: UITableViewDataSource {
             
         }
         
+        //Set the recipe property of the subclassed cell and returns it
         cell.recipe = self.recipes[indexPath.row]
         
         return cell
@@ -56,12 +60,13 @@ class RecipeSearchResultViewController: UIViewController {
     /// Recipes retrieved from API according to user selected ingredients
     var recipes: [Recipe] = []
     
+    /// Recipe selected by the user from the table view
     var selectedRecipe: Recipe?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getRecipes()
+        self.getRecipes()
         
     }
     
@@ -71,6 +76,7 @@ class RecipeSearchResultViewController: UIViewController {
     
     @IBOutlet weak var noRecipeFoundLabel: UILabel!
     
+    /// Retrieve from API the recipes whose ingredients matches the user selected ingredients
     func getRecipes() {
         
         RecipeSearchService().getRecipes(for: ingredients) { [weak self] recipes, error in
@@ -84,16 +90,19 @@ class RecipeSearchResultViewController: UIViewController {
                 // Check if there's error in response
                 if let error = error {
                     
+                    //Hide the loading indicator
                     self.resultLoadingIndicator.isHidden = true
                     
                     guard error as? RecipeSearchError != RecipeSearchError.noRecipeFound else {
                         
+                        //Display a message in place of the table view
                         self.noRecipeFoundLabel.text = error.localizedDescription
                         self.noRecipeFoundLabel.isHidden = false
                         
                         return
                     }
                     
+                    //Display a popup message
                     self.alert(message: error.localizedDescription)
                     
                     return
@@ -110,6 +119,7 @@ class RecipeSearchResultViewController: UIViewController {
                     
                     }
                     
+                    //Store the recipes gathered form API and update the table view
                     self.recipes = recipes
                     
                     self.resultLoadingIndicator.isHidden = true
@@ -126,6 +136,7 @@ class RecipeSearchResultViewController: UIViewController {
             
             if let targetVC = segue.destination as? RecipeDetailViewController {
                 
+                //Send the selected recipe
                 targetVC.recipe = self.selectedRecipe
                 
             }
