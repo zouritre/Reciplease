@@ -13,6 +13,18 @@ class DesignableView: UIView {
 }
 
 @IBDesignable
+class DesignableTableView: UITableView {
+}
+
+@IBDesignable
+class DesignableNavigationController: UINavigationController {
+}
+
+@IBDesignable
+class DesignableTabBarController: UITabBarController {
+}
+
+@IBDesignable
 class DesignableButton: UIButton {
 }
 

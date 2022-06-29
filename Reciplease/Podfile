@@ -11,5 +11,10 @@ target 'Reciplease' do
   # Pods for Reciplease
   pod 'Alamofire'
   pod 'SharkORM'
+  pod 'SwiftyJSON', '~> 4.0'
+
+  target 'RecipleaseTests' do
+        inherit! :search_paths
+    end
 
 end

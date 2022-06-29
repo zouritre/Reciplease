@@ -14,6 +14,8 @@ class IngredientRelatedLabel: UILabel {
         super.init(coder: aDecoder)!
         
         self.font = UIFont(name: "Chalkduster", size: 20.0)
+        
+        self.textColor = .white
 
         }
 
