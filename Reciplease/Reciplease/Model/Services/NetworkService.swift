@@ -10,11 +10,13 @@ import Alamofire
 
 final class NetworkService {
     
+    static let shared = NetworkService()
+    
     let configuration: URLSessionConfiguration
     
     var sessionManager: Session
     
-    init() {
+    private init() {
         self.configuration = .af.default
         
         self.sessionManager = Session()
@@ -28,10 +30,10 @@ final class NetworkService {
     func makeRequest(urlString: String, method: HTTPMethod, completionHandler: @escaping (_ data: Data?, _ error: AFError?) -> Void) {
         
         //Cancel pending requests
-        sessionManager.cancelAllRequests()
+        self.sessionManager.cancelAllRequests()
         
         //Create a new session
-        sessionManager = Alamofire.Session(configuration: configuration)
+        self.sessionManager = Alamofire.Session(configuration: configuration)
         
         // Encode the string to correct URL format
         let url = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -41,7 +43,7 @@ final class NetworkService {
         }
         
         // Emit a request to specified URL
-        sessionManager.request(url, method: method).validate().response { response in
+        self.sessionManager.request(url, method: method).validate().response { response in
             
             switch response.result {
                 

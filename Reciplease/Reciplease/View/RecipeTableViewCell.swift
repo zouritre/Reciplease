@@ -30,8 +30,6 @@ class RecipeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        self.recipeImage.frame = CGRect(x: 0,y: 0,width: 394,height: 138)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

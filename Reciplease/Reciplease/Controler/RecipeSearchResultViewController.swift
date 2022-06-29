@@ -54,6 +54,8 @@ extension RecipeSearchResultViewController: UITableViewDataSource {
 
 class RecipeSearchResultViewController: UIViewController {
 
+    let recipeSearchService = RecipeSearchService()
+    
     /// Ingredients chosen by the user
     var ingredients: [String] = []
     
@@ -79,7 +81,7 @@ class RecipeSearchResultViewController: UIViewController {
     /// Retrieve from API the recipes whose ingredients matches the user selected ingredients
     func getRecipes() {
         
-        RecipeSearchService().getRecipes(for: ingredients) { [weak self] recipes, error in
+        recipeSearchService.getRecipes(for: self.ingredients) { [weak self] recipes, error in
             
             guard let self = self else {
                 return

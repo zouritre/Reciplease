@@ -18,14 +18,11 @@ class RecipeSearchService {
         let ingredientsAsString = ingredients.joined(separator: " ")
         
         let urlString = "\(EdamamApi.recipeSearchUrl)&q=\(ingredientsAsString)&time=\(minCokkingTime)&field=label&field=ingredients&field=totalTime&field=images"
-        
-        let networkService = NetworkService()
-        
-        networkService.makeRequest(urlString: urlString, method: EdamamApi.recipeSearchMethod) { data, error in
+                
+        NetworkService.shared.makeRequest(urlString: urlString, method: EdamamApi.recipeSearchMethod) { data, error in
             
             if let error = error {
                 //Check if errors
-                
                 completionHandler(nil, error)
             
                 return
@@ -35,7 +32,8 @@ class RecipeSearchService {
                 
                 //Check if data is not nil
                 guard let data = data else {
-                    
+                    print("data error")
+
                     completionHandler(nil, RecipeSearchError.noDataReceived)
                     
                     return
@@ -44,7 +42,8 @@ class RecipeSearchService {
 
                 //Check if data is of correct format
                 guard let json = try? JSON(data: data) else {
-                    
+                    print("json error")
+
                     completionHandler(nil, RecipeSearchError.unexpectedDataFormat)
                     
                     return

@@ -78,7 +78,7 @@ class NetworkServiceTest: XCTestCase {
         
         //Given
         let response: HTTPURLResponse? = FakeResponse.responseOK
-        let data: Data? = FakeResponse.correctRecipeData
+        let data: Data? = FakeResponse.randomData
         let error: Error? = FakeResponse.anError
 
         MockURLProtocol.requestHandler = { request in

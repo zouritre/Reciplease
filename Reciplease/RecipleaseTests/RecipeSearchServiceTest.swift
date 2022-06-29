@@ -9,7 +9,7 @@ import XCTest
 @testable import Reciplease
 
 class RecipeSearchServiceTest: XCTestCase {
-
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
@@ -39,8 +39,8 @@ class RecipeSearchServiceTest: XCTestCase {
             
             
         // Then
-            XCTAssertEqual(data![0].cookingTime, 135.0)
             XCTAssertNil(error)
+            XCTAssertEqual(data![0].cookingTime, 135.0)
             expectation.fulfill()
         }
         //wait 50ms for closure to return

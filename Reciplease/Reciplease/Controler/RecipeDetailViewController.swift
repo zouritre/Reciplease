@@ -44,16 +44,21 @@ extension RecipeDetailViewController: UITableViewDataSource {
 
 class RecipeDetailViewController: UIViewController {
     
+    private let favoriteSearchService = FavoriteSearchService()
+
     /// Recipe selected by the user
     var recipe: Recipe?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
         
         self.setFavoriteButtonImage()
 
         self.setupUI(with: self.recipe)
         
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
     @IBOutlet weak var recipeImage: UIImageView!
@@ -68,67 +73,16 @@ class RecipeDetailViewController: UIViewController {
     
     @IBAction func addToFavoriteButton(_ sender: UIBarButtonItem) {
         
-        self.updateFavorites()
+        favoriteSearchService.updateFavorites(recipe: self.recipe)
         
         self.setFavoriteButtonImage()
-        
-    }
-    
-    /// Add a recipe to datastore if it's not already in, otherwise removes it
-    private func updateFavorites() {
-        
-        self.checkIsFavoriteRecipe() { isFavorite in
-            
-            guard let recipe = self.recipe else {
-                return
-            }
-            
-            //Get from datastore recipes whose title matches the recipe selected by the user
-            let query = Favorite.query().where("recipe.title = ?", parameters: ["\(recipe.title)"])
-            
-            switch isFavorite {
-                
-            case true:
-                //Remove recipe from favorites
-                query.fetch().remove()
-                
-            case false:
-                //Add recipe to favorites
-                Favorite(dictionary: ["recipe": recipe]).commit()
-            }
-            
-        }
-        
-    }
-    /// Check if the recipe is in the datastore favorite table and set the favorite button image accordingly
-    /// - Parameter isFavorite: Handler returning a boolean indicating if the recipe was found in the datastore
-    private func checkIsFavoriteRecipe(isFavorite: ((Bool) -> Void)? = nil) {
-        
-        guard let recipe = self.recipe else {
-            return
-        }
-        
-        let query = Favorite.query().where("recipe.title = ?", parameters: ["\(recipe.title)"])
-        
-        if query.count() >= 1 {
-            //Recipe is already in favorites
-            
-            isFavorite?(true)
-            
-        }
-        else {
-            //Recipe is not in favorites
-            
-            isFavorite?(false)
-            
-        }
         
     }
     
     /// Set the UIBarItem star image to hollow or filled according to the recipe being in favorites or not
     private func setFavoriteButtonImage() {
         
-        checkIsFavoriteRecipe() { isFavorite in
+        favoriteSearchService.checkIsFavoriteRecipe(recipe: self.recipe) { isFavorite in
             
             switch isFavorite {
                 
