@@ -28,16 +28,20 @@ class FavoriteSearchService {
                 handler(favoriteRecipes)
                 return
             }
-            
+            print("we are here")
             favoriteRecipes.append(recipe)
         }
-        
+        print("or there")
         handler(favoriteRecipes)
                 
     }
     
     /// Add a recipe to datastore if it's not already in, otherwise removes it
-    func updateFavorites(recipe: Recipe) {
+    func updateFavorites(recipe: Recipe?) {
+        
+        guard let recipe = recipe else {
+            return
+        }
         
         self.checkIsFavoriteRecipe(recipe: recipe) { isFavorite in
             
@@ -60,7 +64,11 @@ class FavoriteSearchService {
     }
     /// Check if the recipe is in the datastore favorite table and set the favorite button image accordingly
     /// - Parameter isFavorite: Handler returning a boolean indicating if the recipe was found in the datastore
-    func checkIsFavoriteRecipe(recipe: Recipe, isFavorite: ((Bool) -> Void)? = nil) {
+    func checkIsFavoriteRecipe(recipe: Recipe?, isFavorite: ((Bool) -> Void)? = nil) {
+        
+        guard let recipe = recipe else {
+            return
+        }
         
         let query = Favorite.query().where("recipe.title = ?", parameters: ["\(recipe.title)"])
         

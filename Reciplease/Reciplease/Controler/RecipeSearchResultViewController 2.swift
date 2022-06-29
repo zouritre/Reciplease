@@ -19,14 +19,13 @@ extension RecipeSearchResultViewController: UITableViewDelegate {
             return
         }
         
-        //Retrieve the recipe of the selected cell
+        //Retrieve the recipe of the selected cell in the table view
         self.selectedRecipe = selectedCellRecipe
         
         performSegue(withIdentifier: "searchResultDetail", sender: self)
     }
     
 }
-
 extension RecipeSearchResultViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,7 +63,7 @@ class RecipeSearchResultViewController: UIViewController {
     var recipes: [Recipe] = []
     
     /// Recipe selected by the user from the table view
-    var selectedRecipe: Recipe = Recipe()
+    var selectedRecipe: Recipe?
     
     override func viewDidLoad() {
         super.viewDidLoad()

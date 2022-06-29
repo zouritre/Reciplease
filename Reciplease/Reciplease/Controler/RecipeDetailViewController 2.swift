@@ -11,6 +11,10 @@ extension RecipeDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        guard let recipe = self.recipe else {
+            return 0
+        }
+        
         return recipe.ingredientNames.count
     
     }
@@ -23,8 +27,12 @@ extension RecipeDetailViewController: UITableViewDataSource {
             
         }
         
+        guard let recipe = self.recipe else {
+            return UITableViewCell()
+        }
+        
         //Set the cell title to each ingredient of the recipe
-        cell.ingredientLabel.text = "- \(self.recipe.ingredientsMeasurements[indexPath.row])"
+        cell.ingredientLabel.text = "- \(recipe.ingredientsMeasurements[indexPath.row])"
         
         return cell
         
@@ -39,7 +47,7 @@ class RecipeDetailViewController: UIViewController {
     private let favoriteSearchService = FavoriteSearchService()
 
     /// Recipe selected by the user
-    var recipe: Recipe = Recipe()
+    var recipe: Recipe?
     
     override func viewWillAppear(_ animated: Bool) {
         
