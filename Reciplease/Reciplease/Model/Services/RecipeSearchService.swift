@@ -63,7 +63,14 @@ class RecipeSearchService {
                         // Store the recipe details
                         recipe.title = recipeDetail["recipe"]["label"].stringValue
                         recipe.imageLink = recipeDetail["recipe"]["images"]["REGULAR"]["url"].stringValue
-                        recipe.cookingTime = recipeDetail["recipe"]["totalTime"].floatValue
+                        
+                        let cookingTime = Int(recipeDetail["recipe"]["totalTime"].floatValue)
+                        let hours = Int(cookingTime/60)
+                        let minutes = Int(cookingTime%60)
+                        
+                        let toHoursAndMinutes = (cookingTime >= 60) ? "\(hours)h\(minutes)min" : "\(minutes)min"
+                        //Convert minutes to hours and minutes
+                        recipe.cookingTime = "\(toHoursAndMinutes)"
                         
                         let ingredientDetails = recipeDetail["recipe"]["ingredients"].arrayValue
 

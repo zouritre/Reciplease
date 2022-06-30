@@ -40,7 +40,7 @@ class RecipeSearchServiceTest: XCTestCase {
             
         // Then
             XCTAssertNil(error)
-            XCTAssertEqual(data![0].cookingTime, 135.0)
+            XCTAssertEqual(data![0].cookingTime, "2h15min")
             expectation.fulfill()
         }
         //wait 50ms for closure to return

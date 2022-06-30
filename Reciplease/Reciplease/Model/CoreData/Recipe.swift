@@ -14,7 +14,7 @@ class Recipe: SRKObject {
     
     @objc dynamic var imageLink: String = ""
     
-    @objc dynamic var cookingTime: Float = 0.0
+    @objc dynamic var cookingTime: String = ""
     
     @objc dynamic var ingredientsMeasurements: [String] = []
     
