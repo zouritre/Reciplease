@@ -44,13 +44,14 @@ class RecipeDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         self.setFavoriteButtonImage()
-
-        self.setupUI(with: self.recipe)
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setupUI(with: self.recipe)
+        
     }
     
     @IBOutlet weak var recipeImage: UIImageView!
