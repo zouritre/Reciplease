@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C372C69247421DB16DA744A /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD5B63C1EF5F827C12BF7520 /* Pods_Reciplease.framework */; };
 		BE14F443C32593F7ED758B99 /* Pods_RecipleaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448035D252A1CCEE409D579 /* Pods_RecipleaseTests.framework */; };
+		E95069F0286DF6A700BE1F6E /* FavoriteSearchServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95069EF286DF6A700BE1F6E /* FavoriteSearchServiceTest.swift */; };
 		E951AB7D2867215D00FA9D7C /* NetworkServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951AB7C2867215D00FA9D7C /* NetworkServiceTest.swift */; };
 		E951AB7F286725E100FA9D7C /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951AB7E286725E100FA9D7C /* MockURLProtocol.swift */; };
 		E951AB812867273C00FA9D7C /* FakeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951AB802867273C00FA9D7C /* FakeResponse.swift */; };
@@ -57,6 +58,7 @@
 		8448035D252A1CCEE409D579 /* Pods_RecipleaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipleaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5B63C1EF5F827C12BF7520 /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59792DFE26B3F903F896949 /* Pods-RecipleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipleaseTests.release.xcconfig"; path = "Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests.release.xcconfig"; sourceTree = "<group>"; };
+		E95069EF286DF6A700BE1F6E /* FavoriteSearchServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchServiceTest.swift; sourceTree = "<group>"; };
 		E951AB72286720C300FA9D7C /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E951AB7B2867215C00FA9D7C /* RecipleaseTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RecipleaseTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		E951AB7C2867215D00FA9D7C /* NetworkServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTest.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				E951AB7E286725E100FA9D7C /* MockURLProtocol.swift */,
 				E951AB7B2867215C00FA9D7C /* RecipleaseTests-Bridging-Header.h */,
 				E951AB86286740B500FA9D7C /* RecipeSearchServiceTest.swift */,
+				E95069EF286DF6A700BE1F6E /* FavoriteSearchServiceTest.swift */,
 			);
 			path = RecipleaseTests;
 			sourceTree = "<group>";
@@ -169,13 +172,6 @@
 				E9F46FDB286BA3730002EB71 /* FavoriteSearchService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		E99E575728662AB70057C206 /* Structures */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Structures;
 			sourceTree = "<group>";
 		};
 		E9E3A4F328612C5100E59144 = {
@@ -229,7 +225,6 @@
 		E9E3A5172861325400E59144 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E99E575728662AB70057C206 /* Structures */,
 				E99E575628662A8E0057C206 /* Services */,
 				E99E575528662A160057C206 /* API */,
 				E99E5754286629F90057C206 /* Errors */,
@@ -442,6 +437,7 @@
 			files = (
 				E951AB812867273C00FA9D7C /* FakeResponse.swift in Sources */,
 				E951AB7D2867215D00FA9D7C /* NetworkServiceTest.swift in Sources */,
+				E95069F0286DF6A700BE1F6E /* FavoriteSearchServiceTest.swift in Sources */,
 				E951AB7F286725E100FA9D7C /* MockURLProtocol.swift in Sources */,
 				E951AB87286740B500FA9D7C /* RecipeSearchServiceTest.swift in Sources */,
 			);

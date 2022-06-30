@@ -16,12 +16,13 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="UW4-pY-eQ0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="selectedImageTintColor" red="0.97254908080000002" green="0.85098040100000005" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.31764706970000001" green="0.47843140360000003" blue="0.60392159219999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <tabBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" red="0.15294116739999999" green="0.15294116739999999" blue="0.15294116739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" red="0.13725490870000001" green="0.20392158630000001" blue="0.32941177490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </tabBarAppearance>
                         <tabBarAppearance key="scrollEdgeAppearance">
-                            <color key="backgroundColor" red="0.15294116739999999" green="0.15294116739999999" blue="0.15294116739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" red="0.13725490870000001" green="0.20392158630000001" blue="0.32941177490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </tabBarAppearance>
                     </tabBar>
                     <connections>
@@ -36,22 +37,22 @@
         <!--Navigation Controller-->
         <scene sceneID="7Qm-4K-rBx">
             <objects>
-                <navigationController id="Dq9-6E-czA" sceneMemberID="viewController">
+                <navigationController interfaceStyle="dark" hidesBarsOnSwipe="YES" id="Dq9-6E-czA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="MO7-6E-lGL"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l1e-JI-Zmg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="l1e-JI-Zmg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.97254908080000002" green="0.85098040100000005" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <navigationBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" red="0.15294116739999999" green="0.15294116739999999" blue="0.15294116739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" red="0.18039217590000001" green="0.270588249" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <textAttributes key="titleTextAttributes">
-                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <color key="textColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </textAttributes>
                         </navigationBarAppearance>
                         <navigationBarAppearance key="scrollEdgeAppearance">
-                            <color key="backgroundColor" red="0.15294116739999999" green="0.15294116739999999" blue="0.15294116739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" red="0.18039217590000001" green="0.270588249" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <textAttributes key="titleTextAttributes">
-                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <color key="textColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </textAttributes>
                         </navigationBarAppearance>
                     </navigationBar>
@@ -80,11 +81,13 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's in your fridge ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cy-u3-mWJ">
                                                 <rect key="frame" x="43" y="0.0" width="288" height="62.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <color key="textColor" red="0.15294116739999999" green="0.15294116739999999" blue="0.15294116739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <searchBar contentMode="redraw" placeholder="Lemon, cheese, sausages..." showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vC8-PJ-uFf">
+                                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Lemon, cheese, sausages..." showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vC8-PJ-uFf">
                                                 <rect key="frame" x="56" y="62.5" width="262" height="62.5"/>
+                                                <color key="tintColor" red="0.89019608500000003" green="0.77254903320000001" blue="0.46666663889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="barTintColor" red="0.89019608500000003" green="0.77254903320000001" blue="0.46666663889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <scopeButtonTitles>
                                                     <string>Title</string>
@@ -97,7 +100,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.30980393290000002" green="0.60784316059999999" blue="0.56078433989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="PRT-Fe-ejc" firstAttribute="leading" secondItem="2zZ-Hi-sjA" secondAttribute="leading" constant="10" id="Qg3-1e-vJI"/>
                                     <constraint firstAttribute="trailing" secondItem="PRT-Fe-ejc" secondAttribute="trailing" constant="10" id="Uxq-PC-dpK"/>
@@ -173,6 +176,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Search for recipes">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                    <color key="baseForegroundColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseBackgroundColor" red="0.30980393290000002" green="0.60784316059999999" blue="0.56078433989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="PPJ-2f-a2G" kind="show" identifier="searchResult" id="M5W-KE-Dnr"/>
@@ -180,7 +185,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gBN-kE-c2r"/>
-                        <color key="backgroundColor" red="0.15294116739999999" green="0.15294116739999999" blue="0.15294116739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.18039217590000001" green="0.270588249" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="gBN-kE-c2r" firstAttribute="trailing" secondItem="Dqh-8R-58t" secondAttribute="trailing" constant="20" id="0ut-i5-T4k"/>
                             <constraint firstItem="2zZ-Hi-sjA" firstAttribute="top" secondItem="gBN-kE-c2r" secondAttribute="top" id="Dg5-p6-6sh"/>
@@ -212,26 +217,27 @@
         <!--Navigation Controller-->
         <scene sceneID="GP5-FT-IUc">
             <objects>
-                <navigationController id="xz4-jm-NQr" sceneMemberID="viewController">
+                <navigationController interfaceStyle="dark" id="xz4-jm-NQr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="zG7-Fh-J8a">
                         <color key="badgeColor" systemColor="systemYellowColor"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jUR-V1-ERT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.93725490570000003" green="0.94509804249999996" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                         <navigationBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" red="0.15294116739999999" green="0.15294116739999999" blue="0.15294116739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" red="0.18039217590000001" green="0.270588249" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <textAttributes key="titleTextAttributes">
-                                <color key="textColor" red="0.97254908080000002" green="0.85098040100000005" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </textAttributes>
                         </navigationBarAppearance>
                         <navigationBarAppearance key="scrollEdgeAppearance">
-                            <color key="backgroundColor" red="0.15294116739999999" green="0.15294116739999999" blue="0.15294116739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" red="0.18039217590000001" green="0.270588249" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <textAttributes key="titleTextAttributes">
-                                <color key="textColor" red="0.97254908080000002" green="0.85098040100000005" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </textAttributes>
                         </navigationBarAppearance>
                     </navigationBar>
@@ -254,7 +260,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7K3-VT-sjV" customClass="DesignableTableView" customModule="Reciplease" customModuleProvider="target">
                                 <rect key="frame" x="10" y="98" width="394" height="705"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.89019608500000003" green="0.77254903320000001" blue="0.46666663889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipe" rowHeight="158" id="WKi-Q6-6E4" customClass="RecipeTableViewCell" customModule="Reciplease" customModuleProvider="target">
@@ -270,13 +276,10 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtU-fW-eWm" userLabel="recipeImageContainer">
                                                             <rect key="frame" x="0.0" y="0.0" width="394" height="138"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dap-Jd-Xvr">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dap-Jd-Xvr">
                                                                     <rect key="frame" x="0.0" y="0.0" width="394" height="138"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="138" id="3wn-9M-91N"/>
-                                                                    </constraints>
                                                                 </imageView>
-                                                                <view alpha="0.64999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgC-0q-sUt" customClass="DesignableView" customModule="Reciplease" customModuleProvider="target">
+                                                                <view alpha="0.64999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgC-0q-sUt" userLabel="Tmer View" customClass="DesignableView" customModule="Reciplease" customModuleProvider="target">
                                                                     <rect key="frame" x="342.5" y="10" width="41.5" height="41.5"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CCC-0I-GH2">
@@ -376,7 +379,7 @@
                                                             <real key="value" value="2"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" red="0.97254908080000002" green="0.85098040100000005" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="value" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="20"/>
@@ -430,7 +433,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eot-rK-zN7"/>
-                        <color key="backgroundColor" red="0.15294116739999999" green="0.15294116739999999" blue="0.15294116739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.18039217590000001" green="0.270588249" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="7K3-VT-sjV" firstAttribute="leading" secondItem="eot-rK-zN7" secondAttribute="leading" constant="10" id="3Go-78-JlO"/>
                             <constraint firstItem="7K3-VT-sjV" firstAttribute="top" secondItem="eot-rK-zN7" secondAttribute="top" constant="10" id="689-F7-w3F"/>
@@ -455,7 +458,7 @@
             </objects>
             <point key="canvasLocation" x="1956.521739130435" y="-350.22321428571428"/>
         </scene>
-        <!--Recipe detail-->
+        <!--Recipe Detail View Controller-->
         <scene sceneID="6LH-RZ-Vi6">
             <objects>
                 <viewController id="HHO-xY-DzY" customClass="RecipeDetailViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
@@ -549,7 +552,7 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.97254908080000002" green="0.85098040100000005" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -599,7 +602,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nlx-g4-dbK"/>
-                        <color key="backgroundColor" red="0.15294116739999999" green="0.15294116739999999" blue="0.15294116739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.18039217590000001" green="0.270588249" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Zy7-3a-ZpP" firstAttribute="height" secondItem="nlx-g4-dbK" secondAttribute="height" multiplier="0.45" id="34J-Vf-nKL"/>
                             <constraint firstItem="O5F-KN-nlM" firstAttribute="top" secondItem="cPx-To-Us5" secondAttribute="bottom" constant="10" id="Dkw-fT-iSQ"/>
@@ -614,7 +617,7 @@
                             <constraint firstItem="nlx-g4-dbK" firstAttribute="bottom" secondItem="O5F-KN-nlM" secondAttribute="bottom" constant="10" id="xrj-9q-zJf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Recipe detail" id="BCE-Or-0FF">
+                    <navigationItem key="navigationItem" id="BCE-Or-0FF">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="star" catalog="system" id="e2i-Ae-uUk">
                             <connections>
                                 <action selector="addToFavoriteButton:" destination="HHO-xY-DzY" id="kyo-Mf-Frm"/>
@@ -640,7 +643,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="hbG-VT-XYW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.15294116739999999" green="0.15294116739999999" blue="0.15294116739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.18039217590000001" green="0.270588249" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipe" rowHeight="158" id="oQM-ld-KQp" customClass="RecipeTableViewCell" customModule="Reciplease" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="158"/>
@@ -761,7 +764,7 @@
                                                     <real key="value" value="2"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                    <color key="value" red="0.97254908080000002" green="0.85098040100000005" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="value" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="20"/>
@@ -834,10 +837,10 @@
                                 </userDefinedRuntimeAttributes>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emptyRow" rowHeight="0.0" id="yxA-RS-EvP" userLabel="Empty Cell">
-                                <rect key="frame" x="0.0" y="360.5" width="414" height="0.0"/>
+                                <rect key="frame" x="0.0" y="360.5" width="414" height="1.1920928955078125e-07"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yxA-RS-EvP" id="q9r-Xe-lZZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="1.1920928955078125e-07"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueP-Wa-JSW">
@@ -871,7 +874,7 @@
             </objects>
             <point key="canvasLocation" x="1957" y="344"/>
         </scene>
-        <!--Recipe detail-->
+        <!--Recipe Detail View Controller-->
         <scene sceneID="Oqb-DL-WIZ">
             <objects>
                 <viewController id="MH0-dy-o9c" customClass="RecipeDetailViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
@@ -965,7 +968,7 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.97254908080000002" green="0.85098040100000005" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -1015,7 +1018,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jnE-3F-fUA"/>
-                        <color key="backgroundColor" red="0.15294116739999999" green="0.15294116739999999" blue="0.15294116739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.18039217590000001" green="0.270588249" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="49x-6J-6hZ" firstAttribute="leading" secondItem="jnE-3F-fUA" secondAttribute="leading" constant="10" id="CLT-Un-qlx"/>
                             <constraint firstItem="49x-6J-6hZ" firstAttribute="height" secondItem="jnE-3F-fUA" secondAttribute="height" multiplier="0.45" id="Iwn-Ty-Nw6"/>
@@ -1030,7 +1033,7 @@
                             <constraint firstItem="qXa-6N-y4V" firstAttribute="leading" secondItem="jnE-3F-fUA" secondAttribute="leading" constant="10" id="yox-cc-1cm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Recipe detail" id="c0o-TE-huy">
+                    <navigationItem key="navigationItem" id="c0o-TE-huy">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="star" catalog="system" id="I1a-ou-ZXi">
                             <connections>
                                 <action selector="addToFavoriteButton:" destination="MH0-dy-o9c" id="S5e-Ea-GoW"/>
@@ -1055,9 +1058,6 @@
         <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
