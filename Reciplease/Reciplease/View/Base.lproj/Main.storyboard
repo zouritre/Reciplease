@@ -37,12 +37,13 @@
         <!--Navigation Controller-->
         <scene sceneID="7Qm-4K-rBx">
             <objects>
-                <navigationController interfaceStyle="dark" hidesBarsOnSwipe="YES" id="Dq9-6E-czA" sceneMemberID="viewController">
+                <navigationController id="Dq9-6E-czA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="MO7-6E-lGL"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="l1e-JI-Zmg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l1e-JI-Zmg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <navigationBarAppearance key="standardAppearance">
                             <color key="backgroundColor" red="0.18039217590000001" green="0.270588249" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <textAttributes key="titleTextAttributes">
@@ -837,10 +838,10 @@
                                 </userDefinedRuntimeAttributes>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emptyRow" rowHeight="0.0" id="yxA-RS-EvP" userLabel="Empty Cell">
-                                <rect key="frame" x="0.0" y="360.5" width="414" height="1.1920928955078125e-07"/>
+                                <rect key="frame" x="0.0" y="360.5" width="414" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yxA-RS-EvP" id="q9r-Xe-lZZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="1.1920928955078125e-07"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueP-Wa-JSW">
