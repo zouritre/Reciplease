@@ -21,6 +21,8 @@ class RecipeTableViewCell: UITableViewCell {
             
             self.recipeTitle.text = newValue.title
             self.recipeIngredients.text = newValue.ingredientNames.joined(separator: ", ")
+                .capitalizingFirstLetter()
+            
             self.recipeImage.loadFrom(URLAddress: newValue.imageLink)
             self.cookingTime.text = String(newValue.cookingTime)
             

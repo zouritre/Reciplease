@@ -1,5 +1,5 @@
 //
-//  UiImageExtended.swift
+//  UiImageViewExtended.swift
 //  Reciplease
 //
 //  Created by Bertrand Dalleau on 01/07/2022.

@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		2C372C69247421DB16DA744A /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD5B63C1EF5F827C12BF7520 /* Pods_Reciplease.framework */; };
 		BE14F443C32593F7ED758B99 /* Pods_RecipleaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448035D252A1CCEE409D579 /* Pods_RecipleaseTests.framework */; };
-		E92D5310286F8373001B1B28 /* UiImageExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D530F286F8373001B1B28 /* UiImageExtended.swift */; };
+		E92D5310286F8373001B1B28 /* UiImageViewExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D530F286F8373001B1B28 /* UiImageViewExtended.swift */; };
+		E92D5314286F9F4C001B1B28 /* StringExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D5313286F9F4C001B1B28 /* StringExtended.swift */; };
 		E95069F0286DF6A700BE1F6E /* FavoriteSearchServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95069EF286DF6A700BE1F6E /* FavoriteSearchServiceTest.swift */; };
 		E95069F2286E079800BE1F6E /* EdamamApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95069F1286E079800BE1F6E /* EdamamApiConstant.swift */; };
 		E951AB7D2867215D00FA9D7C /* NetworkServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951AB7C2867215D00FA9D7C /* NetworkServiceTest.swift */; };
@@ -60,7 +61,8 @@
 		8448035D252A1CCEE409D579 /* Pods_RecipleaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipleaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5B63C1EF5F827C12BF7520 /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59792DFE26B3F903F896949 /* Pods-RecipleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipleaseTests.release.xcconfig"; path = "Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests.release.xcconfig"; sourceTree = "<group>"; };
-		E92D530F286F8373001B1B28 /* UiImageExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UiImageExtended.swift; path = Reciplease/View/UiImageExtended.swift; sourceTree = SOURCE_ROOT; };
+		E92D530F286F8373001B1B28 /* UiImageViewExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UiImageViewExtended.swift; path = Reciplease/Extension/UiImageViewExtended.swift; sourceTree = SOURCE_ROOT; };
+		E92D5313286F9F4C001B1B28 /* StringExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtended.swift; sourceTree = "<group>"; };
 		E95069EF286DF6A700BE1F6E /* FavoriteSearchServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchServiceTest.swift; sourceTree = "<group>"; };
 		E95069F1286E079800BE1F6E /* EdamamApiConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamApiConstant.swift; sourceTree = "<group>"; };
 		E951AB72286720C300FA9D7C /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +140,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E92D5312286F9F0B001B1B28 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E92D530F286F8373001B1B28 /* UiImageViewExtended.swift */,
+				E9FD9CBD2863690F00FA6ADA /* UiViewExtended.swift */,
+				E92D5313286F9F4C001B1B28 /* StringExtended.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		E951AB73286720C300FA9D7C /* RecipleaseTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +214,7 @@
 		E9E3A4FE28612C5200E59144 /* Reciplease */ = {
 			isa = PBXGroup;
 			children = (
+				E92D5312286F9F0B001B1B28 /* Extension */,
 				E9E3A51D2861477300E59144 /* Controler */,
 				E9E3A5172861325400E59144 /* Model */,
 				E9E3A5162861324700E59144 /* View */,
@@ -217,9 +230,7 @@
 		E9E3A5162861324700E59144 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E92D530F286F8373001B1B28 /* UiImageExtended.swift */,
 				E9E3A50528612C5200E59144 /* Main.storyboard */,
-				E9FD9CBD2863690F00FA6ADA /* UiViewExtended.swift */,
 				E9C4AFB828638A0A00A2C744 /* IngredientRelatedLabel.swift */,
 				E95D6EF028651B70009520A3 /* IngredientTableViewCell.swift */,
 				E99E5758286648B00057C206 /* RecipeTableViewCell.swift */,
@@ -464,8 +475,9 @@
 				E99E5759286648B00057C206 /* RecipeTableViewCell.swift in Sources */,
 				E99E575328660C7F0057C206 /* RecipeSearchError.swift in Sources */,
 				E9E3A50428612C5200E59144 /* RecipeSearchViewController.swift in Sources */,
+				E92D5314286F9F4C001B1B28 /* StringExtended.swift in Sources */,
 				E98E737E286A55A100CAE782 /* Recipe.swift in Sources */,
-				E92D5310286F8373001B1B28 /* UiImageExtended.swift in Sources */,
+				E92D5310286F8373001B1B28 /* UiImageViewExtended.swift in Sources */,
 				E98E7380286A61B900CAE782 /* Favorite.swift in Sources */,
 				E95D6EEB28649D7B009520A3 /* RecipeSearchService.swift in Sources */,
 				E95069F2286E079800BE1F6E /* EdamamApiConstant.swift in Sources */,
