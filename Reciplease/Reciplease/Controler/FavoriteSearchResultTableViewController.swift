@@ -63,7 +63,6 @@ class FavoriteSearchResultTableViewController: UITableViewController {
         if self.recipes.count > 1 && indexPath.row > 0 {
             //At least one favorite recipe has been retrieved from datastore, ignore first element of the array
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "recipe") as? RecipeTableViewCell else {
-                print("here")
 
                 return UITableViewCell()
             }
@@ -75,7 +74,6 @@ class FavoriteSearchResultTableViewController: UITableViewController {
         else if self.recipes.count > 1 && indexPath.row == 0 {
             //At least one favorite recipe has been retrieved from datastore, dequeue a cell not visible to the user for the first row
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "emptyRow") else {
-                print("there")
                 return UITableViewCell()
             }
             
