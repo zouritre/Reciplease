@@ -86,7 +86,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Lemon, cheese, sausages..." showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vC8-PJ-uFf">
-                                                <rect key="frame" x="56" y="62.5" width="262" height="62.5"/>
+                                                <rect key="frame" x="0.0" y="62.5" width="374" height="62.5"/>
                                                 <color key="tintColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="barTintColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -97,7 +97,8 @@
                                             </searchBar>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="vC8-PJ-uFf" firstAttribute="width" secondItem="PRT-Fe-ejc" secondAttribute="width" multiplier="0.7" id="VRj-vD-tSg"/>
+                                            <constraint firstItem="vC8-PJ-uFf" firstAttribute="leading" secondItem="PRT-Fe-ejc" secondAttribute="leadingMargin" id="HzV-Tk-Mhc"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="vC8-PJ-uFf" secondAttribute="trailing" id="SJQ-sK-fmK"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -803,10 +804,10 @@
                                 </userDefinedRuntimeAttributes>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emptyRow" rowHeight="0.0" id="yxA-RS-EvP" userLabel="Empty Cell">
-                                <rect key="frame" x="0.0" y="402.5" width="414" height="1.1920928955078125e-07"/>
+                                <rect key="frame" x="0.0" y="402.5" width="414" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yxA-RS-EvP" id="q9r-Xe-lZZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="1.1920928955078125e-07"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueP-Wa-JSW">
