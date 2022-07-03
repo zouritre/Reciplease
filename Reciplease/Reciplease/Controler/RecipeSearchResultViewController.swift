@@ -42,7 +42,7 @@ extension RecipeSearchResultViewController: UITableViewDataSource {
             
         }
         
-        //Set the recipe property of the subclassed cell and returns it
+        //Set the recipe property of the subclassed cell
         cell.recipe = self.recipes[indexPath.row]
         
         return cell
@@ -68,6 +68,10 @@ class RecipeSearchResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.noRecipeFoundLabel.isAccessibilityElement = true
+        self.noRecipeFoundLabel.accessibilityLabel = "Unsuccessful search"
+        self.noRecipeFoundLabel.accessibilityHint = "No recipe has been found"
         
         self.getRecipes()
         

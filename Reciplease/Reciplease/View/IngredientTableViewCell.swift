@@ -16,6 +16,10 @@ class IngredientTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
+        self.ingredientLabel.isAccessibilityElement = true
+        self.ingredientLabel.accessibilityLabel = "Ingredient"
+        self.ingredientLabel.accessibilityHint = "One of the  chosen ingredients"
 
         // Configure the view for the selected state
     }

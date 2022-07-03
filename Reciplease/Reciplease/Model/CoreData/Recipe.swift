@@ -44,9 +44,21 @@ class Recipe: SRKObject {
         let hours = Int(cookingTime/60)
         let minutes = Int(cookingTime%60)
         
-        let toHoursAndMinutes = (cookingTime >= 60) ? "\(hours)h\(minutes)min" : "\(minutes)min"
-        
-        return toHoursAndMinutes
+        if hours >= 1 && minutes > 0{
+            
+            return "\(hours)h \(minutes)m"
+            
+        }
+        else if hours >= 1 && minutes == 0 {
+            
+            return "\(hours)h"
+            
+        }
+        else {
+            
+            return "\(minutes)m"
+            
+        }
         
     }
     

@@ -23,8 +23,11 @@ extension RecipeSearchViewController: UITableViewDataSource {
             return UITableViewCell()
             
         }
-        
+        // Display the chosen ingredient in the cell
         cell.ingredientLabel.text = "- \(self.ingredients[indexPath.row])"
+        
+        //Set chosen ingredient name as accessibility value for the ingredient label
+        cell.ingredientLabel.accessibilityValue = self.ingredients[indexPath.row]
         
         return cell
         
@@ -74,6 +77,10 @@ class RecipeSearchViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.searchBar.delegate = self
+        self.searchBar.isAccessibilityElement = true
+        self.searchBar.accessibilityHint = "Search bar for ingredients"
+        self.searchBar.accessibilityValue = "Lemon, cheese, sausages"
+        self.searchBar.accessibilityLabel = "Search bar"
         
     }
 
