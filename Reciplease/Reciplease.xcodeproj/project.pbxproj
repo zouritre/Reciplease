@@ -10,6 +10,9 @@
 		2C372C69247421DB16DA744A /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD5B63C1EF5F827C12BF7520 /* Pods_Reciplease.framework */; };
 		BE14F443C32593F7ED758B99 /* Pods_RecipleaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448035D252A1CCEE409D579 /* Pods_RecipleaseTests.framework */; };
 		E903404B2870AAB500467145 /* FavoriteSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E903404A2870AAB500467145 /* FavoriteSearchViewController.swift */; };
+		E917B49628734ED30016235D /* AccessibilityHint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E917B49528734ED30016235D /* AccessibilityHint.swift */; };
+		E917B498287351EF0016235D /* AccessibilityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E917B497287351EF0016235D /* AccessibilityLabel.swift */; };
+		E917B49A28735AC80016235D /* IngredientMeasurementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E917B49928735AC80016235D /* IngredientMeasurementTableViewCell.swift */; };
 		E92D5310286F8373001B1B28 /* UiImageViewExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D530F286F8373001B1B28 /* UiImageViewExtended.swift */; };
 		E92D5314286F9F4C001B1B28 /* StringExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D5313286F9F4C001B1B28 /* StringExtended.swift */; };
 		E95069F0286DF6A700BE1F6E /* FavoriteSearchServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95069EF286DF6A700BE1F6E /* FavoriteSearchServiceTest.swift */; };
@@ -62,6 +65,9 @@
 		AD5B63C1EF5F827C12BF7520 /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59792DFE26B3F903F896949 /* Pods-RecipleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipleaseTests.release.xcconfig"; path = "Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		E903404A2870AAB500467145 /* FavoriteSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteSearchViewController.swift; path = Reciplease/Controler/FavoriteSearchViewController.swift; sourceTree = SOURCE_ROOT; };
+		E917B49528734ED30016235D /* AccessibilityHint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityHint.swift; sourceTree = "<group>"; };
+		E917B497287351EF0016235D /* AccessibilityLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityLabel.swift; sourceTree = "<group>"; };
+		E917B49928735AC80016235D /* IngredientMeasurementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientMeasurementTableViewCell.swift; sourceTree = "<group>"; };
 		E92D530F286F8373001B1B28 /* UiImageViewExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UiImageViewExtended.swift; path = Reciplease/Extension/UiImageViewExtended.swift; sourceTree = SOURCE_ROOT; };
 		E92D5313286F9F4C001B1B28 /* StringExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtended.swift; sourceTree = "<group>"; };
 		E95069EF286DF6A700BE1F6E /* FavoriteSearchServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchServiceTest.swift; sourceTree = "<group>"; };
@@ -138,6 +144,15 @@
 				E59792DFE26B3F903F896949 /* Pods-RecipleaseTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E917B49428734E730016235D /* Accessibility */ = {
+			isa = PBXGroup;
+			children = (
+				E917B49528734ED30016235D /* AccessibilityHint.swift */,
+				E917B497287351EF0016235D /* AccessibilityLabel.swift */,
+			);
+			path = Accessibility;
 			sourceTree = "<group>";
 		};
 		E92D5312286F9F0B001B1B28 /* Extension */ = {
@@ -235,6 +250,7 @@
 				E95D6EF028651B70009520A3 /* IngredientTableViewCell.swift */,
 				E99E5758286648B00057C206 /* RecipeTableViewCell.swift */,
 				E99E575A286658610057C206 /* recipeSearchLabel.swift */,
+				E917B49928735AC80016235D /* IngredientMeasurementTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -242,6 +258,7 @@
 		E9E3A5172861325400E59144 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E917B49428734E730016235D /* Accessibility */,
 				E99E575628662A8E0057C206 /* Services */,
 				E99E575528662A160057C206 /* API */,
 				E99E5754286629F90057C206 /* Errors */,
@@ -469,7 +486,9 @@
 				E95D6EED28649E64009520A3 /* EdamamApi.swift in Sources */,
 				E95D6EEF2864F487009520A3 /* RecipeSearchResultViewController.swift in Sources */,
 				E95D6EE928649674009520A3 /* ViewControllerExtension.swift in Sources */,
+				E917B49628734ED30016235D /* AccessibilityHint.swift in Sources */,
 				E95D6EF128651B70009520A3 /* IngredientTableViewCell.swift in Sources */,
+				E917B498287351EF0016235D /* AccessibilityLabel.swift in Sources */,
 				E986B1432864830B00FC3153 /* NetworkService.swift in Sources */,
 				E99E5759286648B00057C206 /* RecipeTableViewCell.swift in Sources */,
 				E99E575328660C7F0057C206 /* RecipeSearchError.swift in Sources */,
@@ -477,6 +496,7 @@
 				E92D5314286F9F4C001B1B28 /* StringExtended.swift in Sources */,
 				E98E737E286A55A100CAE782 /* Recipe.swift in Sources */,
 				E92D5310286F8373001B1B28 /* UiImageViewExtended.swift in Sources */,
+				E917B49A28735AC80016235D /* IngredientMeasurementTableViewCell.swift in Sources */,
 				E98E7380286A61B900CAE782 /* Favorite.swift in Sources */,
 				E95D6EEB28649D7B009520A3 /* RecipeSearchService.swift in Sources */,
 				E95069F2286E079800BE1F6E /* EdamamApiConstant.swift in Sources */,

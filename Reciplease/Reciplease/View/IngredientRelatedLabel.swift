@@ -16,6 +16,11 @@ class IngredientRelatedLabel: UILabel {
         self.font = UIFont(name: "Chalkduster", size: 20.0)
         
         self.textColor = .white
+        
+        self.isAccessibilityElement = true
+        self.accessibilityHint = AccessibilityHint.ingredientListHeader.rawValue
+        self.accessibilityLabel = AccessibilityLabel.ingredientListHeader.rawValue
+        self.accessibilityValue = self.text
 
         }
 

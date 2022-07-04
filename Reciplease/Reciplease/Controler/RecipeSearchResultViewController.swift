@@ -70,8 +70,8 @@ class RecipeSearchResultViewController: UIViewController {
         super.viewDidLoad()
         
         self.noRecipeFoundLabel.isAccessibilityElement = true
-        self.noRecipeFoundLabel.accessibilityLabel = "Unsuccessful search"
-        self.noRecipeFoundLabel.accessibilityHint = "No recipe has been found"
+        self.noRecipeFoundLabel.accessibilityLabel = AccessibilityLabel.unsuccessfulSearch.rawValue
+        self.noRecipeFoundLabel.accessibilityHint = AccessibilityHint.unsuccessfulSearch.rawValue
         
         self.getRecipes()
         
@@ -102,8 +102,11 @@ class RecipeSearchResultViewController: UIViewController {
                     
                     guard error as? RecipeSearchError != RecipeSearchError.noRecipeFound else {
                         
+                        //Hide the tbale view
+                        self.recipeTableView.isHidden = true
                         //Display a message in place of the table view
                         self.noRecipeFoundLabel.text = error.localizedDescription
+                        self.noRecipeFoundLabel.accessibilityValue = self.noRecipeFoundLabel.text
                         self.noRecipeFoundLabel.isHidden = false
                         
                         return
@@ -128,6 +131,8 @@ class RecipeSearchResultViewController: UIViewController {
                     
                     //Store the recipes gathered form API and update the table view
                     self.recipes = recipes
+                    
+                    self.recipeTableView.isHidden = false
                     
                     self.resultLoadingIndicator.isHidden = true
                     

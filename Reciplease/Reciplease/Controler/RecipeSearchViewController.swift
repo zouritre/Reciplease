@@ -77,13 +77,24 @@ class RecipeSearchViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.searchBar.delegate = self
-        self.searchBar.isAccessibilityElement = true
-        self.searchBar.accessibilityHint = "Search bar for ingredients"
-        self.searchBar.accessibilityValue = "Lemon, cheese, sausages"
-        self.searchBar.accessibilityLabel = "Search bar"
         
+        self.searchBar.isAccessibilityElement = true
+        self.largeTitle.isAccessibilityElement = true
+        
+        self.searchBar.accessibilityHint = AccessibilityHint.searchBar.rawValue
+        self.largeTitle.accessibilityHint = AccessibilityHint.searchScreenLargeTitle.rawValue
+        
+        self.searchBar.accessibilityLabel = AccessibilityLabel.searchBar.rawValue
+        self.largeTitle.accessibilityLabel = AccessibilityLabel.searchScreenLargeTitle.rawValue
+        
+        self.searchBar.accessibilityValue = "Lemon, cheese, sausages"
+        self.largeTitle.accessibilityValue = self.largeTitle.text
     }
 
+    @IBOutlet weak var largeTitle: UILabel!
+    
+    @IBOutlet weak var ingredientListHeader: IngredientRelatedLabel!
+    
     @IBOutlet weak var ingredientTableView: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!
