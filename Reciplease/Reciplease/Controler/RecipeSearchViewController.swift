@@ -12,6 +12,9 @@ extension RecipeSearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        //Hide table view if it's empty to prevent "Search for recipe" button from being inaccessible
+        self.ingredientTableView.isHidden = self.ingredients.count > 0 ? false : true
+        
         return self.ingredients.count
     
     }
@@ -75,6 +78,8 @@ class RecipeSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //Hide tableView since is empty to prevent "Search for recipe" button from being inaccessible
+        self.ingredientTableView.isHidden = true
         
         self.searchBar.delegate = self
         
