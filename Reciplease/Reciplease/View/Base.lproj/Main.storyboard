@@ -289,7 +289,7 @@
                                                         <view clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="gtU-fW-eWm" userLabel="recipeImageContainer">
                                                             <rect key="frame" x="260" y="10" width="118" height="118"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="120" translatesAutoresizingMaskIntoConstraints="NO" id="dap-Jd-Xvr">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-recipe-120" translatesAutoresizingMaskIntoConstraints="NO" id="dap-Jd-Xvr">
                                                                     <rect key="frame" x="0.0" y="0.0" width="118" height="118"/>
                                                                 </imageView>
                                                             </subviews>
@@ -468,7 +468,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zy7-3a-ZpP" customClass="DesignableView" customModule="Reciplease" customModuleProvider="target">
                                 <rect key="frame" x="10" y="88" width="394" height="326.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1024" translatesAutoresizingMaskIntoConstraints="NO" id="LFM-pD-0Kg">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-recipe-1024" translatesAutoresizingMaskIntoConstraints="NO" id="LFM-pD-0Kg">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="326.5"/>
                                     </imageView>
                                     <view alpha="0.64999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svA-0Q-sK3" customClass="DesignableView" customModule="Reciplease" customModuleProvider="target">
@@ -647,7 +647,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49x-6J-6hZ" customClass="DesignableView" customModule="Reciplease" customModuleProvider="target">
                                 <rect key="frame" x="10" y="88" width="394" height="326.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1024" translatesAutoresizingMaskIntoConstraints="NO" id="dsR-3r-HeE">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-recipe-1024" translatesAutoresizingMaskIntoConstraints="NO" id="dsR-3r-HeE">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="326.5"/>
                                     </imageView>
                                     <view alpha="0.64999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDf-iW-Vq8" customClass="DesignableView" customModule="Reciplease" customModuleProvider="target">
@@ -841,7 +841,7 @@
                                                         <view clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Stg-Rf-c5W" userLabel="recipeImageContainer">
                                                             <rect key="frame" x="260" y="10" width="118" height="118"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="120" translatesAutoresizingMaskIntoConstraints="NO" id="aQg-UA-3pO">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-recipe-120" translatesAutoresizingMaskIntoConstraints="NO" id="aQg-UA-3pO">
                                                                     <rect key="frame" x="0.0" y="0.0" width="118" height="118"/>
                                                                 </imageView>
                                                             </subviews>
@@ -1008,8 +1008,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1024" width="1024" height="1024"/>
-        <image name="120" width="120" height="120"/>
+        <image name="default-recipe-1024" width="1024" height="1024"/>
+        <image name="default-recipe-120" width="60" height="60"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
