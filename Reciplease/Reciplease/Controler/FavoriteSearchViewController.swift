@@ -91,12 +91,28 @@ class FavoriteSearchViewController: UIViewController {
     private let favoriteSearchService = FavoriteSearchService()
     
     /// Favorite recipes retrieved from datastore. First element initialized with  a placeholder object wich is ignored at all time to prevent table view row count to be equal 0
-    var recipes: [Recipe] = []
+    private var recipes: [Recipe] = []
     
     /// Recipe selected by the user from the table view
-    var selectedRecipe: Recipe = Recipe()
+    private var selectedRecipe: Recipe = Recipe()
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.getFavorites()
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBOutlet weak var resultLoadingIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var favoriteRecipeTableView: UITableView!
+    
+    @IBOutlet weak var noRecipeFoundLabel: UILabel!
+    
+    private func getFavorites() {
         
         favoriteSearchService.getFavoriteRecipes() { favRecipes in
             
@@ -117,16 +133,6 @@ class FavoriteSearchViewController: UIViewController {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    @IBOutlet weak var resultLoadingIndicator: UIActivityIndicatorView!
-    
-    @IBOutlet weak var favoriteRecipeTableView: UITableView!
-    
-    @IBOutlet weak var noRecipeFoundLabel: UILabel!
-    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -144,25 +150,3 @@ class FavoriteSearchViewController: UIViewController {
     }
 }
 
-/*
- // Override to support conditional editing of the table view.
- override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
- // Return false if you do not want the specified item to be editable.
- return true
- }
- */
-
-/*
- // Override to support rearranging the table view.
- override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
- 
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
- // Return false if you do not want the item to be re-orderable.
- return true
- }
- */

@@ -73,7 +73,7 @@ extension RecipeSearchViewController: UISearchBarDelegate {
 
 class RecipeSearchViewController: UIViewController {
     
-    var ingredients: [String] = []
+    private var ingredients: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

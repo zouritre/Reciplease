@@ -55,16 +55,16 @@ extension RecipeSearchResultViewController: UITableViewDataSource {
 
 class RecipeSearchResultViewController: UIViewController {
 
-    let recipeSearchService = RecipeSearchService()
+    private let recipeSearchService = RecipeSearchService()
     
     /// Ingredients chosen by the user
     var ingredients: [String] = []
     
     /// Recipes retrieved from API according to user selected ingredients
-    var recipes: [Recipe] = []
+    private var recipes: [Recipe] = []
     
     /// Recipe selected by the user from the table view
-    var selectedRecipe: Recipe = Recipe()
+    private var selectedRecipe: Recipe = Recipe()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +84,7 @@ class RecipeSearchResultViewController: UIViewController {
     @IBOutlet weak var noRecipeFoundLabel: UILabel!
     
     /// Retrieve from API the recipes whose ingredients matches the user selected ingredients
-    func getRecipes() {
+    private func getRecipes() {
         
         recipeSearchService.getRecipes(for: self.ingredients) { [weak self] recipes, error in
             
