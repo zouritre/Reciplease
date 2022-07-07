@@ -15,6 +15,8 @@
 		E917B49A28735AC80016235D /* IngredientMeasurementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E917B49928735AC80016235D /* IngredientMeasurementTableViewCell.swift */; };
 		E92D5310286F8373001B1B28 /* UiImageViewExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D530F286F8373001B1B28 /* UiImageViewExtended.swift */; };
 		E92D5314286F9F4C001B1B28 /* StringExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D5313286F9F4C001B1B28 /* StringExtended.swift */; };
+		E93C1B572877994B005E4A0A /* CookingTimeInHour.json in Resources */ = {isa = PBXBuildFile; fileRef = E93C1B562877994B005E4A0A /* CookingTimeInHour.json */; };
+		E93C1B5928779AE3005E4A0A /* CookingTimeInMinute.json in Resources */ = {isa = PBXBuildFile; fileRef = E93C1B5828779AE3005E4A0A /* CookingTimeInMinute.json */; };
 		E95069F0286DF6A700BE1F6E /* FavoriteSearchServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95069EF286DF6A700BE1F6E /* FavoriteSearchServiceTest.swift */; };
 		E95069F2286E079800BE1F6E /* EdamamApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95069F1286E079800BE1F6E /* EdamamApiConstant.swift */; };
 		E951AB7D2867215D00FA9D7C /* NetworkServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951AB7C2867215D00FA9D7C /* NetworkServiceTest.swift */; };
@@ -70,6 +72,8 @@
 		E917B49928735AC80016235D /* IngredientMeasurementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientMeasurementTableViewCell.swift; sourceTree = "<group>"; };
 		E92D530F286F8373001B1B28 /* UiImageViewExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UiImageViewExtended.swift; path = Reciplease/Extension/UiImageViewExtended.swift; sourceTree = SOURCE_ROOT; };
 		E92D5313286F9F4C001B1B28 /* StringExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtended.swift; sourceTree = "<group>"; };
+		E93C1B562877994B005E4A0A /* CookingTimeInHour.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CookingTimeInHour.json; sourceTree = "<group>"; };
+		E93C1B5828779AE3005E4A0A /* CookingTimeInMinute.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CookingTimeInMinute.json; sourceTree = "<group>"; };
 		E95069EF286DF6A700BE1F6E /* FavoriteSearchServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchServiceTest.swift; sourceTree = "<group>"; };
 		E95069F1286E079800BE1F6E /* EdamamApiConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamApiConstant.swift; sourceTree = "<group>"; };
 		E951AB72286720C300FA9D7C /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,6 +296,8 @@
 		E9F46FDD286BB44F0002EB71 /* JSONs */ = {
 			isa = PBXGroup;
 			children = (
+				E93C1B562877994B005E4A0A /* CookingTimeInHour.json */,
+				E93C1B5828779AE3005E4A0A /* CookingTimeInMinute.json */,
 				E951AB822867283900FA9D7C /* RecipeData.json */,
 				E951AB8A2867739800FA9D7C /* RecipeDataEmpty.json */,
 			);
@@ -383,7 +389,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E93C1B5928779AE3005E4A0A /* CookingTimeInMinute.json in Resources */,
 				E951AB832867283900FA9D7C /* RecipeData.json in Resources */,
+				E93C1B572877994B005E4A0A /* CookingTimeInHour.json in Resources */,
 				E951AB8B2867739800FA9D7C /* RecipeDataEmpty.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

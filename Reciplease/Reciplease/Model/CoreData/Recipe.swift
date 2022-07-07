@@ -38,7 +38,7 @@ class Recipe: SRKObject {
         self.init(dictionary: propertiesSetter)
     }
     
-    private func getTime(from recipeDetail: JSON) -> String {
+    func getTime(from recipeDetail: JSON) -> String {
         
         let cookingTime = Int(recipeDetail["recipe"]["totalTime"].floatValue)
         let hours = Int(cookingTime/60)
