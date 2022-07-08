@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SRKDelegate {
         
         SharkORM.setDelegate(self)
         SharkORM.openDatabaseNamed("Reciplease")
-        
+                
         return true
     }
 

@@ -35,6 +35,19 @@ class FakeResponse {
         return try! Data(contentsOf: url)
     }
     
+    static var correctTimeVariationHourData: Data? {
+    
+        let url = bundle.url(forResource: "CookingTimeInHour", withExtension: "json")!
+        
+        return try! Data(contentsOf: url)
+    }
+    
+    static var correctTimeVariationMinuteData: Data? {
+    
+        let url = bundle.url(forResource: "CookingTimeInMinute", withExtension: "json")!
+        
+        return try! Data(contentsOf: url)
+    }
     class someError: Error {}
     
     static var anError = someError()

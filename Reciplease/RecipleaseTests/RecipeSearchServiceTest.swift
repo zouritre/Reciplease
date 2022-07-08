@@ -40,7 +40,7 @@ class RecipeSearchServiceTest: XCTestCase {
             
         // Then
             XCTAssertNil(error)
-            XCTAssertEqual(data![0].cookingTime, 135.0)
+            XCTAssertEqual(data![0].title, "Chocolate Peanut Butter Fudge")
             expectation.fulfill()
         }
         //wait 50ms for closure to return
@@ -171,6 +171,84 @@ class RecipeSearchServiceTest: XCTestCase {
         // Then
             XCTAssertNil(data)
             XCTAssertNotNil(error)
+            expectation.fulfill()
+        }
+        //wait 50ms for closure to return
+        wait(for: [expectation], timeout: 0.05)
+        
+    }
+    
+    func testGetRecipesShouldReturnHoursOnly() {
+        
+        //Given
+        let response: HTTPURLResponse? = FakeResponse.responseOK
+        let data: Data? = FakeResponse.correctTimeVariationHourData
+        let error: Error? = nil
+
+        MockURLProtocol.requestHandler = { request in
+            return (response, data, error)
+        }
+        
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+
+        RecipeSearchService().getRecipes(for: [""]){ data, error in
+            
+        // Then
+            XCTAssertNil(error)
+            XCTAssertEqual(data![0].cookingTime, "1h")
+            expectation.fulfill()
+        }
+        //wait 50ms for closure to return
+        wait(for: [expectation], timeout: 0.05)
+        
+    }
+    
+    func testGetRecipesShouldReturnMinutesOnly() {
+        
+        //Given
+        let response: HTTPURLResponse? = FakeResponse.responseOK
+        let data: Data? = FakeResponse.correctTimeVariationMinuteData
+        let error: Error? = nil
+
+        MockURLProtocol.requestHandler = { request in
+            return (response, data, error)
+        }
+        
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+
+        RecipeSearchService().getRecipes(for: [""]){ data, error in
+            
+        // Then
+            XCTAssertNil(error)
+            XCTAssertEqual(data![0].cookingTime, "5m")
+            expectation.fulfill()
+        }
+        //wait 50ms for closure to return
+        wait(for: [expectation], timeout: 0.05)
+        
+    }
+    
+    func testGetRecipesShouldReturnHoursAndMinutes() {
+        
+        //Given
+        let response: HTTPURLResponse? = FakeResponse.responseOK
+        let data: Data? = FakeResponse.correctRecipeData
+        let error: Error? = nil
+
+        MockURLProtocol.requestHandler = { request in
+            return (response, data, error)
+        }
+        
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+
+        RecipeSearchService().getRecipes(for: [""]){ data, error in
+            
+        // Then
+            XCTAssertNil(error)
+            XCTAssertEqual(data![0].cookingTime, "2h 15m")
             expectation.fulfill()
         }
         //wait 50ms for closure to return

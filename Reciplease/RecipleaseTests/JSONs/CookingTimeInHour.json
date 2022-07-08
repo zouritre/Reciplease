@@ -1,0 +1,13 @@
+{
+    "from": 1,
+    "to": 1,
+    "count": 1,
+    "_links": {},
+    "hits": [
+        {
+            "recipe": {
+                "totalTime": 60.0
+            }
+        }
+    ]
+}

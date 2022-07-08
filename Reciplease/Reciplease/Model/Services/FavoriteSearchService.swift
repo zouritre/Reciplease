@@ -29,9 +29,11 @@ class FavoriteSearchService {
                 return
             }
             
+            (recipe.ingredientNames, recipe.ingredientsMeasurements) = self.decodedIngredients(from: recipe)
+            
             favoriteRecipes.append(recipe)
+            
         }
-        
         handler(favoriteRecipes)
                 
     }
@@ -39,7 +41,11 @@ class FavoriteSearchService {
     /// Add a recipe to datastore if it's not already in, otherwise removes it
     func updateFavorites(recipe: Recipe) {
         
-        self.checkIsFavoriteRecipe(recipe: recipe) { isFavorite in
+        self.checkIsFavoriteRecipe(recipe: recipe) { [weak self] isFavorite in
+            
+            guard let self = self else {
+                return
+            }
             
             //Get from datastore recipes whose title matches the recipe selected by the user
             let query = Favorite.query().where("recipe.title = ?", parameters: ["\(recipe.title)"])
@@ -51,8 +57,11 @@ class FavoriteSearchService {
                 query.fetch().remove()
                 
             case false:
+                (recipe.ingredientNames, recipe.ingredientsMeasurements) = self.encodedIngredients(from: recipe)
+                
                 //Add recipe to favorites
                 Favorite(dictionary: ["recipe": recipe]).commit()
+                
             }
             
         }
@@ -64,18 +73,67 @@ class FavoriteSearchService {
         
         let query = Favorite.query().where("recipe.title = ?", parameters: ["\(recipe.title)"])
         
-        if query.count() >= 1 {
-            //Recipe is already in favorites
+        isFavorite?(query.count() >= 1)
+        
+    }
+    
+    func decodedIngredients(from recipe: Recipe) -> (decodedNames: [String], decodedMeasurements: [String]) {
+        
+        var ingredientNames: [String] = []
+        
+        var ingredientsMeasurements: [String] = []
+        
+        recipe.ingredientNames.forEach { name in
+
+            guard let name = name.removingPercentEncoding else {
+                return
+            }
             
-            isFavorite?(true)
-            
+            ingredientNames.append(name)
+
         }
-        else {
-            //Recipe is not in favorites
+        
+        recipe.ingredientsMeasurements.forEach { measure in
+
+            guard let measure = measure.removingPercentEncoding else {
+                return
+            }
             
-            isFavorite?(false)
-            
+            ingredientsMeasurements.append(measure)
+
         }
+        
+        return (ingredientNames, ingredientsMeasurements)
+        
+    }
+    
+    func encodedIngredients(from recipe: Recipe) -> (encodedNames: [String], encodedMeasurements: [String]) {
+        
+        var ingredientNames: [String] = []
+        
+        var ingredientsMeasurements: [String] = []
+        
+        recipe.ingredientNames.forEach { name in
+
+            guard let name = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+                return
+            }
+            
+            ingredientNames.append(name)
+
+        }
+        
+        recipe.ingredientsMeasurements.forEach { measure in
+
+            guard let measure = measure.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+                return
+            }
+            
+            ingredientsMeasurements.append(measure)
+
+        }
+        
+        return (ingredientNames, ingredientsMeasurements)
         
     }
 }

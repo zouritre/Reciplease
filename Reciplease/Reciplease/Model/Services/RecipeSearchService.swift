@@ -32,7 +32,6 @@ class RecipeSearchService {
                 
                 //Check if data is not nil
                 guard let data = data else {
-                    print("data error")
 
                     completionHandler(nil, RecipeSearchError.noDataReceived)
                     
@@ -42,7 +41,6 @@ class RecipeSearchService {
 
                 //Check if data is of correct format
                 guard let json = try? JSON(data: data) else {
-                    print("json error")
 
                     completionHandler(nil, RecipeSearchError.unexpectedDataFormat)
                     
@@ -58,30 +56,7 @@ class RecipeSearchService {
                     
                     for recipeDetail in json["hits"].arrayValue {
                         
-                        let recipe = Recipe()
-                        
-                        // Store the recipe details
-                        recipe.title = recipeDetail["recipe"]["label"].stringValue
-                        recipe.imageLink = recipeDetail["recipe"]["images"]["REGULAR"]["url"].stringValue
-                        recipe.cookingTime = recipeDetail["recipe"]["totalTime"].floatValue
-                        
-                        let ingredientDetails = recipeDetail["recipe"]["ingredients"].arrayValue
-
-                        var ingredientNames: [String] = []
-                        
-                        var ingredientsMeasurements: [String] = []
-                        
-                        ingredientDetails.forEach { ingredient in
-
-                            ingredientNames.append(ingredient["food"].stringValue)
-
-                            ingredientsMeasurements.append(ingredient["text"].stringValue)
-
-                        }
-                        
-                        recipe.ingredientNames = ingredientNames
-                        
-                        recipe.ingredientsMeasurements = ingredientsMeasurements
+                        let recipe = Recipe(recipeDetail: recipeDetail)
                         
                         recipes.append(recipe)
                         

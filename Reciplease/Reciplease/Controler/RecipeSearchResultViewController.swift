@@ -42,7 +42,7 @@ extension RecipeSearchResultViewController: UITableViewDataSource {
             
         }
         
-        //Set the recipe property of the subclassed cell and returns it
+        //Set the recipe property of the subclassed cell
         cell.recipe = self.recipes[indexPath.row]
         
         return cell
@@ -55,19 +55,23 @@ extension RecipeSearchResultViewController: UITableViewDataSource {
 
 class RecipeSearchResultViewController: UIViewController {
 
-    let recipeSearchService = RecipeSearchService()
+    private let recipeSearchService = RecipeSearchService()
     
     /// Ingredients chosen by the user
     var ingredients: [String] = []
     
     /// Recipes retrieved from API according to user selected ingredients
-    var recipes: [Recipe] = []
+    private var recipes: [Recipe] = []
     
     /// Recipe selected by the user from the table view
-    var selectedRecipe: Recipe = Recipe()
+    private var selectedRecipe: Recipe = Recipe()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.noRecipeFoundLabel.isAccessibilityElement = true
+        self.noRecipeFoundLabel.accessibilityLabel = AccessibilityLabel.unsuccessfulSearch.rawValue
+        self.noRecipeFoundLabel.accessibilityHint = AccessibilityHint.unsuccessfulSearch.rawValue
         
         self.getRecipes()
         
@@ -80,7 +84,7 @@ class RecipeSearchResultViewController: UIViewController {
     @IBOutlet weak var noRecipeFoundLabel: UILabel!
     
     /// Retrieve from API the recipes whose ingredients matches the user selected ingredients
-    func getRecipes() {
+    private func getRecipes() {
         
         recipeSearchService.getRecipes(for: self.ingredients) { [weak self] recipes, error in
             
@@ -98,8 +102,11 @@ class RecipeSearchResultViewController: UIViewController {
                     
                     guard error as? RecipeSearchError != RecipeSearchError.noRecipeFound else {
                         
+                        //Hide the tbale view
+                        self.recipeTableView.isHidden = true
                         //Display a message in place of the table view
                         self.noRecipeFoundLabel.text = error.localizedDescription
+                        self.noRecipeFoundLabel.accessibilityValue = self.noRecipeFoundLabel.text
                         self.noRecipeFoundLabel.isHidden = false
                         
                         return
@@ -124,6 +131,8 @@ class RecipeSearchResultViewController: UIViewController {
                     
                     //Store the recipes gathered form API and update the table view
                     self.recipes = recipes
+                    
+                    self.recipeTableView.isHidden = false
                     
                     self.resultLoadingIndicator.isHidden = true
                     

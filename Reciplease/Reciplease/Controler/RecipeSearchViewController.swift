@@ -12,6 +12,9 @@ extension RecipeSearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        //Hide table view if it's empty to prevent "Search for recipe" button from being inaccessible
+        self.ingredientTableView.isHidden = self.ingredients.count > 0 ? false : true
+        
         return self.ingredients.count
     
     }
@@ -23,8 +26,11 @@ extension RecipeSearchViewController: UITableViewDataSource {
             return UITableViewCell()
             
         }
-        
+        // Display the chosen ingredient in the cell
         cell.ingredientLabel.text = "- \(self.ingredients[indexPath.row])"
+        
+        //Set chosen ingredient name as accessibility value for the ingredient label
+        cell.ingredientLabel.accessibilityValue = self.ingredients[indexPath.row]
         
         return cell
         
@@ -67,16 +73,33 @@ extension RecipeSearchViewController: UISearchBarDelegate {
 
 class RecipeSearchViewController: UIViewController {
     
-    var ingredients: [String] = []
+    private var ingredients: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //Hide tableView since is empty to prevent "Search for recipe" button from being inaccessible
+        self.ingredientTableView.isHidden = true
         
         self.searchBar.delegate = self
         
+        self.searchBar.isAccessibilityElement = true
+        self.largeTitle.isAccessibilityElement = true
+        
+        self.searchBar.accessibilityHint = AccessibilityHint.searchBar.rawValue
+        self.largeTitle.accessibilityHint = AccessibilityHint.searchScreenLargeTitle.rawValue
+        
+        self.searchBar.accessibilityLabel = AccessibilityLabel.searchBar.rawValue
+        self.largeTitle.accessibilityLabel = AccessibilityLabel.searchScreenLargeTitle.rawValue
+        
+        self.searchBar.accessibilityValue = "Lemon, cheese, sausages"
+        self.largeTitle.accessibilityValue = self.largeTitle.text
     }
 
+    @IBOutlet weak var largeTitle: UILabel!
+    
+    @IBOutlet weak var ingredientListHeader: IngredientRelatedLabel!
+    
     @IBOutlet weak var ingredientTableView: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!

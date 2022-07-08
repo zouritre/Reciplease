@@ -14,7 +14,7 @@ final class NetworkService {
     
     let configuration: URLSessionConfiguration
     
-    var sessionManager: Session
+    private var sessionManager: Session
     
     private init() {
         self.configuration = .af.default

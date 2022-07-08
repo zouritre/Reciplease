@@ -17,13 +17,13 @@ class recipeSearchLabel: UILabel {
         switch self.tag {
             
         case 1:
-            self.font = UIFont(name: "Futura", size: 30.0)
-            
-        case 2:
             self.font = UIFont(name: "Futura", size: 20.0)
             
+        case 2:
+            self.font = UIFont(name: "Futura", size: 14.0)
+            
         default:
-            self.font = UIFont(name: "Futura", size: 25.0)
+            self.font = UIFont(name: "Futura", size: 11.0)
         }
         
         self.textColor = .white
