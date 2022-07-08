@@ -64,18 +64,7 @@ class FavoriteSearchService {
         
         let query = Favorite.query().where("recipe.title = ?", parameters: ["\(recipe.title)"])
         
-        if query.count() >= 1 {
-            //Recipe is already in favorites
-            
-            isFavorite?(true)
-            
-        }
-        else {
-            //Recipe is not in favorites
-            
-            isFavorite?(false)
-            
-        }
+        isFavorite?(query.count() >= 1)
         
     }
 }
