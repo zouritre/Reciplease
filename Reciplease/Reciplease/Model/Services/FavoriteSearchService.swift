@@ -29,7 +29,7 @@ class FavoriteSearchService {
                 return
             }
             
-            (recipe.ingredientNames, recipe.ingredientsMeasurements) = decodedIngredients(from: recipe)
+            (recipe.ingredientNames, recipe.ingredientsMeasurements) = self.decodedIngredients(from: recipe)
             
             favoriteRecipes.append(recipe)
             
@@ -85,13 +85,21 @@ class FavoriteSearchService {
         
         recipe.ingredientNames.forEach { name in
 
-            ingredientNames.append(name.removingPercentEncoding!)
+            guard let name = name.removingPercentEncoding else {
+                return
+            }
+            
+            ingredientNames.append(name)
 
         }
         
         recipe.ingredientsMeasurements.forEach { measure in
 
-            ingredientsMeasurements.append(measure.removingPercentEncoding!)
+            guard let measure = measure.removingPercentEncoding else {
+                return
+            }
+            
+            ingredientsMeasurements.append(measure)
 
         }
         
@@ -107,13 +115,21 @@ class FavoriteSearchService {
         
         recipe.ingredientNames.forEach { name in
 
-            ingredientNames.append(name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+            guard let name = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+                return
+            }
+            
+            ingredientNames.append(name)
 
         }
         
         recipe.ingredientsMeasurements.forEach { measure in
 
-            ingredientsMeasurements.append(measure.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+            guard let measure = measure.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+                return
+            }
+            
+            ingredientsMeasurements.append(measure)
 
         }
         
