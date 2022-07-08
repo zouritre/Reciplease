@@ -100,6 +100,9 @@ class FavoriteSearchViewController: UIViewController {
         
         self.getFavorites()
         
+        self.favoriteRecipeTableView.isHidden = false
+
+        
     }
     
     override func viewDidLoad() {
@@ -122,9 +125,15 @@ class FavoriteSearchViewController: UIViewController {
             
             self.recipes = favRecipes
             
-            self.resultLoadingIndicator.isHidden = true
+            self.favoriteRecipeTableView.isHidden = true
+            
+            self.resultLoadingIndicator.isHidden = false
             
             self.favoriteRecipeTableView.reloadData()
+            
+            self.favoriteRecipeTableView.isHidden = false
+            
+            self.resultLoadingIndicator.isHidden = true
             
             if self.recipes.count == 0 {
                 
