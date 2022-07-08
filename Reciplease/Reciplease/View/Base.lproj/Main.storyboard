@@ -88,8 +88,9 @@
                                                 <color key="textColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Lemon, cheese, sausages..." showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vC8-PJ-uFf">
+                                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vC8-PJ-uFf">
                                                 <rect key="frame" x="0.0" y="62.5" width="374" height="62.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="barTintColor" red="0.9529411793" green="0.98039215800000001" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <textInputTraits key="textInputTraits"/>

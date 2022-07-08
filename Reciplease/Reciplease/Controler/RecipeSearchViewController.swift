@@ -75,6 +75,11 @@ class RecipeSearchViewController: UIViewController {
     
     private var ingredients: [String] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Lemon, cheese, sausages...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
