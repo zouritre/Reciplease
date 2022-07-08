@@ -29,6 +29,7 @@ class FavoriteSearchService {
                 return
             }
             
+            //Set ingredient names and measurements arrays with arrays of decoded strings
             (recipe.ingredientNames, recipe.ingredientsMeasurements) = self.decodedIngredients(from: recipe)
             
             favoriteRecipes.append(recipe)
@@ -77,6 +78,9 @@ class FavoriteSearchService {
         
     }
     
+    /// Decode previously encoded strings from ingredient names and measurements arrays
+    /// - Parameter recipe: The recipe from wich to retrieve the  ingredient names and measurements arrays
+    /// - Returns: A set of string arrays with decoded values
     func decodedIngredients(from recipe: Recipe) -> (decodedNames: [String], decodedMeasurements: [String]) {
         
         var ingredientNames: [String] = []
@@ -107,6 +111,9 @@ class FavoriteSearchService {
         
     }
     
+    /// Encode strings from ingredient names and measurements arrays
+    /// - Parameter recipe: The recipe from wich to retrieve the  ingredient names and measurements arrays
+    /// - Returns: A set of string arrays with encoded values
     func encodedIngredients(from recipe: Recipe) -> (encodedNames: [String], encodedMeasurements: [String]) {
         
         var ingredientNames: [String] = []

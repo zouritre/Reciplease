@@ -38,6 +38,9 @@ class Recipe: SRKObject {
         self.init(dictionary: propertiesSetter)
     }
     
+    /// Format minutes to HH:mm
+    /// - Parameter recipeDetail: JSON contaning the time value of a recipe
+    /// - Returns: A string formatted time
     func getTime(from recipeDetail: JSON) -> String {
         
         let cookingTime = Int(recipeDetail["recipe"]["totalTime"].floatValue)
@@ -62,6 +65,9 @@ class Recipe: SRKObject {
         
     }
     
+    /// Retrieve the ingredient names and measurements of a recipe
+    /// - Parameter recipeDetail: JSON containing the ingredients of a recipd
+    /// - Returns: A set containing every ingredient names and their measurements
     private func getIngredients(from recipeDetail: JSON) -> (ingredientNames: [String], ingredientsMeasurements: [String]) {
         
         let ingredientDetails = recipeDetail["recipe"]["ingredients"].arrayValue
