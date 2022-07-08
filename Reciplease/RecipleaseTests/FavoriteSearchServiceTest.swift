@@ -12,6 +12,8 @@ class FavoriteSearchServiceTest: XCTestCase {
 
     var favoriteSearchService = FavoriteSearchService()
     
+    let recipe = Recipe()
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
@@ -24,19 +26,22 @@ class FavoriteSearchServiceTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testAllFavoritesShouldBeReturnedFromDatastore() {
+    func testAllFavoritesShouldBeFetchedFromDatastore() {
         
         //Given
+        recipe.title = "test"
+        
+        //When
         //Append a recipe to the 'Favorite' table of the datastore
         Favorite(dictionary: ["recipe": Recipe()]).commit()
         
-        //When
         let expectation = expectation(description: "Wait for queue change")
         
         favoriteSearchService.getFavoriteRecipes() { recipe in
         
             //Then
             XCTAssertEqual(recipe.count, 1)
+
             expectation.fulfill()
         }
         waitForExpectations(timeout: 0.05)
@@ -62,9 +67,8 @@ class FavoriteSearchServiceTest: XCTestCase {
     func testRecipeShouldBeAddedToDataStore() {
         
         //Given
-        let recipe = Recipe()
         recipe.title = "test"
-        
+
         //When
         favoriteSearchService.updateFavorites(recipe: recipe)
         
@@ -76,7 +80,6 @@ class FavoriteSearchServiceTest: XCTestCase {
     func testRecipeShouldBeRemovedFromDataStore() {
         
         //Given
-        let recipe = Recipe()
         recipe.title = "test"
         
         //Append the recipe to the 'Favorite' table of the datastore
@@ -93,7 +96,6 @@ class FavoriteSearchServiceTest: XCTestCase {
     func testAllFavoritesShouldBeFoundInDataStore() {
         
         //Given
-        let recipe = Recipe()
         recipe.title = "test"
         
         //Append the recipe to the 'Favorite' table of the datastore
@@ -116,7 +118,6 @@ class FavoriteSearchServiceTest: XCTestCase {
     func testNoFavoritesShouldBeFoundInDataStore() {
         
         //Given
-        let recipe = Recipe()
         recipe.title = "test"
         
         //Not appending any recipe to the datastore
@@ -132,6 +133,44 @@ class FavoriteSearchServiceTest: XCTestCase {
         }
         
         waitForExpectations(timeout: 0.05)
+
+    }
+    
+    func testIngredientsShouldBeEncoded() {
+        
+        //Given
+        recipe.ingredientNames = ["1/3 tbsp"]
+        recipe.ingredientsMeasurements = ["2/3 tbsp"]
+        
+        //Not appending any recipe to the datastore
+        
+        //When
+        var measure: [String] = []
+        var name: [String] = []
+        
+        (name, measure) = favoriteSearchService.encodedIngredients(from: self.recipe)
+        
+        XCTAssertEqual(name, ["1/3%20tbsp"])
+        XCTAssertEqual(measure, ["2/3%20tbsp"])
+
+    }
+    
+    func testIngredientsShouldBeDecoded() {
+        
+        //Given
+        recipe.ingredientNames = ["1/3%20tbsp"]
+        recipe.ingredientsMeasurements = ["2/3%20tbsp"]
+        
+        //Not appending any recipe to the datastore
+        
+        //When
+        var measure: [String] = []
+        var name: [String] = []
+        
+        (name, measure) = favoriteSearchService.decodedIngredients(from: self.recipe)
+        
+        XCTAssertEqual(name, ["1/3 tbsp"])
+        XCTAssertEqual(measure, ["2/3 tbsp"])
 
     }
     

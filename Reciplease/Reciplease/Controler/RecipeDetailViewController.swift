@@ -11,7 +11,11 @@ extension RecipeDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return recipe.ingredientNames.count
+        guard let count = self.recipe?.ingredientNames.count else {
+            return 0
+        }
+        
+        return count
     
     }
     
@@ -24,8 +28,8 @@ extension RecipeDetailViewController: UITableViewDataSource {
         }
         
         //Set the cell title to each ingredient of the recipe
-        cell.ingredientMeasurementLabel.text = "- \(self.recipe.ingredientsMeasurements[indexPath.row])"
-        cell.ingredientMeasurementLabel.accessibilityValue = self.recipe.ingredientsMeasurements[indexPath.row]
+        cell.ingredientMeasurementLabel.text = "- \(self.recipe?.ingredientsMeasurements[indexPath.row] ?? "empty")"
+        cell.ingredientMeasurementLabel.accessibilityValue = self.recipe?.ingredientsMeasurements[indexPath.row]
         
         return cell
         
@@ -40,7 +44,7 @@ class RecipeDetailViewController: UIViewController {
     private let favoriteSearchService = FavoriteSearchService()
 
     /// Recipe selected by the user
-    var recipe: Recipe = Recipe()
+    var recipe: Recipe?
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -60,9 +64,7 @@ class RecipeDetailViewController: UIViewController {
         
         self.recipeImage.accessibilityHint = AccessibilityHint.recipeImage.rawValue
         self.recipeTitle.accessibilityHint = AccessibilityHint.recipeTitle.rawValue
-        self.recipeTitle.accessibilityValue = self.recipe.title
         self.cookingTimeLabel.accessibilityHint = AccessibilityHint.cookingTime.rawValue
-        self.cookingTimeLabel.accessibilityValue = self.recipe.cookingTime
         self.favoriteButton.accessibilityHint = AccessibilityHint.favoriteButton.rawValue
         
         self.recipeImage.accessibilityLabel = AccessibilityLabel.recipeImage.rawValue
@@ -70,6 +72,10 @@ class RecipeDetailViewController: UIViewController {
         self.cookingTimeLabel.accessibilityLabel = AccessibilityLabel.cookingTime.rawValue
         self.favoriteButton.accessibilityLabel = AccessibilityLabel.favoriteButton.rawValue
         
+        self.recipeTitle.accessibilityValue = self.recipe?.title
+        self.cookingTimeLabel.accessibilityValue = self.recipe?.cookingTime
+
+
     }
     
     @IBOutlet weak var recipeImage: UIImageView!
@@ -84,7 +90,11 @@ class RecipeDetailViewController: UIViewController {
     
     @IBAction func addToFavoriteButton(_ sender: UIBarButtonItem) {
         
-        favoriteSearchService.updateFavorites(recipe: self.recipe)
+        guard let recipe = recipe else {
+            return
+        }
+
+        favoriteSearchService.updateFavorites(recipe: recipe)
         
         self.setFavoriteButtonImage()
         
@@ -93,7 +103,11 @@ class RecipeDetailViewController: UIViewController {
     /// Set the UIBarItem star image to hollow or filled according to the recipe being in favorites or not
     private func setFavoriteButtonImage() {
         
-        favoriteSearchService.checkIsFavoriteRecipe(recipe: self.recipe) { isFavorite in
+        guard let recipe = recipe else {
+            return
+        }
+
+        favoriteSearchService.checkIsFavoriteRecipe(recipe: recipe) { isFavorite in
             
             switch isFavorite {
                 

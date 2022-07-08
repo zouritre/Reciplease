@@ -114,7 +114,11 @@ class FavoriteSearchViewController: UIViewController {
     
     private func getFavorites() {
         
-        favoriteSearchService.getFavoriteRecipes() { favRecipes in
+        favoriteSearchService.getFavoriteRecipes() { [weak self] favRecipes in
+            
+            guard let self = self else {
+                return
+            }
             
             self.recipes = favRecipes
             
