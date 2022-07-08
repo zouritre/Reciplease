@@ -117,6 +117,10 @@ class FavoriteSearchViewController: UIViewController {
     
     private func getFavorites() {
         
+        self.favoriteRecipeTableView.isHidden = true
+        
+        self.resultLoadingIndicator.isHidden = false
+        
         favoriteSearchService.getFavoriteRecipes() { [weak self] favRecipes in
             
             guard let self = self else {
@@ -125,22 +129,21 @@ class FavoriteSearchViewController: UIViewController {
             
             self.recipes = favRecipes
             
-            self.favoriteRecipeTableView.isHidden = true
-            
-            self.resultLoadingIndicator.isHidden = false
-            
             self.favoriteRecipeTableView.reloadData()
-            
-            self.favoriteRecipeTableView.isHidden = false
             
             self.resultLoadingIndicator.isHidden = true
             
             if self.recipes.count == 0 {
                 
                 self.noRecipeFoundLabel.isHidden = false
+                
             }
             else {
+                
                 self.noRecipeFoundLabel.isHidden = true
+                
+                self.favoriteRecipeTableView.isHidden = false
+                
             }
         }
         
