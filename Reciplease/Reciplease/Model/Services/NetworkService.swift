@@ -27,7 +27,7 @@ final class NetworkService {
     ///   - url: URL of the request
     ///   - method: Method used to send the request
     ///   - completionHandler: The data received in the response if any or an error
-    func makeRequest(urlString: String, method: HTTPMethod, completionHandler: @escaping (_ data: Data?, _ error: AFError?) -> Void) {
+    func makeRequest(url: URL?, method: HTTPMethod, completionHandler: @escaping (_ data: Data?, _ error: AFError?) -> Void) {
         
         //Cancel pending requests
         self.sessionManager.cancelAllRequests()
@@ -35,11 +35,8 @@ final class NetworkService {
         //Create a new session
         self.sessionManager = Alamofire.Session(configuration: configuration)
         
-        // Encode the string to correct URL format
-        let url = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        
         guard let url = url else {
-            return
+            return completionHandler(nil, .invalidURL(url: "bad url"))
         }
         
         // Emit a request to specified URL

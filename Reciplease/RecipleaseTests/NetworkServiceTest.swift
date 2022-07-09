@@ -35,7 +35,7 @@ class NetworkServiceTest: XCTestCase {
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
 
-        NetworkService.shared.makeRequest(urlString: "https://stackoverflow.com", method: .get){ data, error in
+        NetworkService.shared.makeRequest(url: URL(string: "https://stackoverflow.com"), method: .get){ data, error in
             
         // Then
             XCTAssertNotNil(data)
@@ -62,7 +62,7 @@ class NetworkServiceTest: XCTestCase {
         let expectation = XCTestExpectation(description: "Wait for queue change.")
 
         //Random parameters, does not matter
-        NetworkService.shared.makeRequest(urlString: "https://stackoverflow.com", method: .get){ data, error in
+        NetworkService.shared.makeRequest(url: URL(string: "https://stackoverflow.com"), method: .get){ data, error in
 
         // Then
             XCTAssertNil(data)
@@ -89,7 +89,7 @@ class NetworkServiceTest: XCTestCase {
         let expectation = XCTestExpectation(description: "Wait for queue change.")
 
         //Random parameters, does not matter
-        NetworkService.shared.makeRequest(urlString: "https://stackoverflow.com", method: .get){ data, error in
+        NetworkService.shared.makeRequest(url: URL(string: "https://stackoverflow.com"), method: .get){ data, error in
 
         // Then
             XCTAssertNil(data)
