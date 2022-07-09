@@ -10,12 +10,11 @@ import SwiftyJSON
 
 class RecipeSearchService {
     
-    
     func getRecipes(for ingredients: [String], completionHandler: @escaping (_ recipes: [Recipe]?, _ error: Error?) -> Void) {
         
         // Convert ingredients array to a single string
         let ingredientsAsString = ingredients.joined(separator: " ")
-          
+        
         NetworkService.shared.makeRequest(url: EdamamApi.recipeSearchUrl(q: ingredientsAsString), method: .get) { data, error in
             
             if let error = error {

@@ -192,7 +192,7 @@
                                     <color key="baseBackgroundColor" red="0.30980393290000002" green="0.60784316059999999" blue="0.56078433989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="PPJ-2f-a2G" kind="show" identifier="searchResult" id="M5W-KE-Dnr"/>
+                                    <segue destination="PPJ-2f-a2G" kind="show" identifier="searchResult" id="7Rw-IM-bTu"/>
                                 </connections>
                             </button>
                         </subviews>

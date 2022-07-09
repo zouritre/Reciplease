@@ -45,7 +45,6 @@ extension RecipeSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked( _ searchBar: UISearchBar) {
             
         guard let splittedSearchText = searchBar.text?.split(separator: ",") else {
-            print("search bar text splitting returned empty array")
             return
         }
         
@@ -77,6 +76,7 @@ class RecipeSearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+        //Make placeholder text color white
         self.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Lemon, cheese, sausages...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         
     }
@@ -117,9 +117,7 @@ class RecipeSearchViewController: UIViewController {
         
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "searchResult" {
             
             if let targetVc = segue.destination as? RecipeSearchResultViewController {

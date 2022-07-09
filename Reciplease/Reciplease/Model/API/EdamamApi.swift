@@ -19,6 +19,7 @@ class EdamamApi {
         URLQueryItem(name: "field", value: "ingredients"),
         URLQueryItem(name: "field", value: "totalTime"),
         URLQueryItem(name: "field", value: "images"),
+        URLQueryItem(name: "random", value: "true"),
         URLQueryItem(name: "q", value: "")
     ]
     
@@ -37,7 +38,7 @@ class EdamamApi {
         //Remove last element to prevent infinite appending
         self.queryItems.removeLast()
         self.queryItems.append(URLQueryItem(name: "q", value: q))
-        
+
         var components = URLComponents()
         
         components.queryItems = self.queryItems
