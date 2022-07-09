@@ -98,10 +98,20 @@ class FavoriteSearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+        self.favoriteRecipeTableView.isHidden = true
+        
+        self.resultLoadingIndicator.isHidden = false
+        
         self.getFavorites()
         
         self.favoriteRecipeTableView.isHidden = false
+        
+        self.resultLoadingIndicator.isHidden = true
 
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.favoriteRecipeTableView.isHidden = true
         
     }
     
@@ -117,9 +127,6 @@ class FavoriteSearchViewController: UIViewController {
     
     private func getFavorites() {
         
-        self.favoriteRecipeTableView.isHidden = true
-        
-        self.resultLoadingIndicator.isHidden = false
         
         favoriteSearchService.getFavoriteRecipes() { [weak self] favRecipes in
             
@@ -131,8 +138,6 @@ class FavoriteSearchViewController: UIViewController {
             
             self.favoriteRecipeTableView.reloadData()
             
-            self.resultLoadingIndicator.isHidden = true
-            
             if self.recipes.count == 0 {
                 
                 self.noRecipeFoundLabel.isHidden = false
@@ -141,8 +146,6 @@ class FavoriteSearchViewController: UIViewController {
             else {
                 
                 self.noRecipeFoundLabel.isHidden = true
-                
-                self.favoriteRecipeTableView.isHidden = false
                 
             }
         }
