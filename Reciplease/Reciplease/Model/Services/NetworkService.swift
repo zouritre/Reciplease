@@ -9,7 +9,6 @@ import Foundation
 import Alamofire
 
 final class NetworkService {
-    
     static let shared = NetworkService()
     
     let configuration: URLSessionConfiguration
@@ -22,13 +21,12 @@ final class NetworkService {
         self.sessionManager = Session()
     }
     
-    /// Send an HTTPS request to specified URL
+    /// Send an HTTPS request to provided URL
     /// - Parameters:
     ///   - url: URL of the request
     ///   - method: Method used to send the request
     ///   - completionHandler: The data received in the response if any or an error
     func makeRequest(url: URL?, method: HTTPMethod, completionHandler: @escaping (_ data: Data?, _ error: AFError?) -> Void) {
-        
         //Cancel pending requests
         self.sessionManager.cancelAllRequests()
         
@@ -39,20 +37,16 @@ final class NetworkService {
             return completionHandler(nil, .invalidURL(url: "bad url"))
         }
         
-        // Emit a request to specified URL
+        // Emit a request to provided URL
         self.sessionManager.request(url, method: method).validate().response { response in
-            
             switch response.result {
-                
             case .success(let data):
                 completionHandler(data, nil)
                 
             case .failure(let error):
                 completionHandler(nil, error)
-                
             }
         }
     }
-
 }
 

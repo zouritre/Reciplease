@@ -8,7 +8,6 @@
 import UIKit
 
 class IngredientTableViewCell: UITableViewCell {
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,10 +19,7 @@ class IngredientTableViewCell: UITableViewCell {
         self.ingredientLabel.isAccessibilityElement = true
         self.ingredientLabel.accessibilityLabel = AccessibilityLabel.chosenIngredient.rawValue
         self.ingredientLabel.accessibilityHint = AccessibilityHint.chosenIngredient.rawValue
-
-        // Configure the view for the selected state
     }
 
     @IBOutlet weak var ingredientLabel: UILabel!
-    
 }

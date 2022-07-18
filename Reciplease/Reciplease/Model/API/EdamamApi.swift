@@ -9,7 +9,6 @@ import Foundation
 import Alamofire
 
 class EdamamApi {
-    
     private static var queryItems = [
         URLQueryItem(name: "app_id", value: EdamamApiConstant.app_id),
         URLQueryItem(name: "app_key", value: EdamamApiConstant.app_key),
@@ -31,7 +30,6 @@ class EdamamApi {
         components.path = "/api/recipes/v2"
         
         return components.url
-        
     }
     
     static func recipeSearchUrl(q: String) -> URL? {
@@ -44,6 +42,5 @@ class EdamamApi {
         components.queryItems = self.queryItems
         
         return components.url(relativeTo: self.baseUrl)?.absoluteURL
-        
     }
 }

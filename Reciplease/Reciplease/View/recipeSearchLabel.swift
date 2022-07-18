@@ -9,13 +9,10 @@ import Foundation
 import UIKit
 
 class recipeSearchLabel: UILabel {
-    
     required init(coder aDecoder: NSCoder) {
-        
         super.init(coder: aDecoder)!
         
         switch self.tag {
-            
         case 1:
             self.font = UIFont(name: "Futura", size: 20.0)
             
@@ -27,12 +24,9 @@ class recipeSearchLabel: UILabel {
         }
         
         self.textColor = .white
-
-        }
+    }
 
     override init(frame: CGRect) {
-        
         super.init(frame: frame)
-    
     }
 }

@@ -33,7 +33,6 @@ class DesignableLabel: UILabel {
 }
 
 extension UIView {
-    
     @IBInspectable
     var cornerRadius: CGFloat {
         get {

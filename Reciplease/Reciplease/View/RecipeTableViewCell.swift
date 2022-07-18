@@ -10,14 +10,9 @@ import UIKit
 
 @IBDesignable
 class RecipeTableViewCell: UITableViewCell {
-    
     var recipe: Recipe? {
-        
         willSet {
-            
-            guard let newValue = newValue else {
-                return
-            }
+            guard let newValue = newValue else { return }
             
             //Set the outlet values
             self.recipeTitle.text = newValue.title
@@ -29,9 +24,7 @@ class RecipeTableViewCell: UITableViewCell {
             //Set the accessibility values for each outlet
             self.recipeTitle.accessibilityValue = self.recipeTitle.text
             self.ingredientMeasurement.accessibilityValue = self.ingredientMeasurement.text
-        
             self.cookingTime.accessibilityValue = self.cookingTime.text
-
         }
     }
     
@@ -51,27 +44,18 @@ class RecipeTableViewCell: UITableViewCell {
         self.ingredientMeasurement.accessibilityLabel = AccessibilityLabel.ingredients.rawValue
 
         self.cookingTime.accessibilityHint = AccessibilityHint.cookingTime.rawValue
-        
         self.recipeImage.accessibilityHint = AccessibilityHint.recipeImage.rawValue
-        
         self.recipeTitle.accessibilityHint = AccessibilityHint.recipeTitle.rawValue
-        
         self.ingredientMeasurement.accessibilityHint = AccessibilityHint.ingredients.rawValue
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     @IBOutlet weak var cookingTime: UILabel!
-    
     @IBOutlet weak var recipeImage: UIImageView!
-    
     @IBOutlet weak var recipeTitle: UILabel!
-    
     @IBOutlet weak var ingredientMeasurement: UILabel!
     
 }

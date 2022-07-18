@@ -9,7 +9,5 @@ import Foundation
 import SharkORM
 
 class Favorite: SRKObject {
-
     @objc dynamic var recipe: Recipe?
-
 }

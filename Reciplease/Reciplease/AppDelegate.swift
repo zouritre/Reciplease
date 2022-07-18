@@ -12,7 +12,7 @@ import SharkORM
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, SRKDelegate {
 
-
+    var coreDataError = Notification(name: Notification.Name(rawValue: "CoreDataError"))
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -60,7 +60,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SRKDelegate {
                  * The store could not be migrated to the current model version.
                  Check the error message to determine what the actual problem was.
                  */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                
+                self.coreDataError.userInfo = error.userInfo
+                
+                //Send the error to the listeners (RecipeDetailViewController & FavoriteSearchViewController)
+                NotificationCenter.default.post(self.coreDataError)
             }
         })
         return container
@@ -76,8 +80,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SRKDelegate {
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                let error = error as NSError
+               
+                self.coreDataError.userInfo = error.userInfo
+                
+                //Send the error to the listeners (RecipeDetailViewController & FavoriteSearchViewController)
+                NotificationCenter.default.post(self.coreDataError)
             }
         }
     }
